@@ -1,0 +1,114 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(246, 247, 252, 255);
+  background-color: var(--primary-color);
+  position: sticky;
+  padding: 0 6vw;
+  box-shadow: 0px 10px 31px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 10px 31px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 31px 5px rgba(0, 0, 0, 0.75);
+  top: 0;
+  z-index: 6;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+}
+.navbarlast {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  justify-content: center;
+  gap: 20px;
+}
+.navbarlast button {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navbar .main-logo {
+  height: 10vh;
+  border-radius: 5px;
+}
+.navbarfirst {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+.globe {
+  color: white;
+  font-size: 15px;
+}
+.openmenurespo {
+  display: none;
+}
+.navbarrespo {
+  display: none;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .navbarfirst {
+    display: none;
+  }
+  .navbarlast {
+    flex-direction: row-reverse;
+    padding: 20px 0px;
+  }
+  .navbarrespo {
+    display: block;
+  }
+
+  .openmenurespo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 62px;
+    gap: 3vh;
+    background-color: aliceblue;
+  }
+  .openmenurespo a {
+    align-items: center;
+    background-color: #e3e3e3;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: black;
+    height: 35px;
+  }
+}
+.burgermenu {
+  color: white;
+  font-size: 25px;
+}
+.navbarfirst a:hover {
+  background-color: #dc3b4d;
+  transition: 0.3s;
+  border-radius: 18px;
+}
+/* .navbarfirst .active {
+  background-color: #dc3b4d;
+} */
+.userisconnected h1 {
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+}
+.userisconnected {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-left: 10px;
+}

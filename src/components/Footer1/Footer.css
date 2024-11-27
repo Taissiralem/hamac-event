@@ -1,0 +1,116 @@
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 25px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.footercontainer {
+  display: flex;
+  gap: 10px;
+  /* padding: 20px 0 50px 0; */
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.footercontainer > * {
+  width: 50%;
+}
+.footercopyright {
+  text-align: center;
+  padding: 35px 0 15px 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20vw;
+}
+.footerfirstsection {
+  width: 80% !important;
+  padding-top: 25px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footerfirstsection p {
+  width: 70%;
+  max-width: 600px;
+  line-height: 24px;
+}
+.iconfooter {
+  width: 100px;
+  border-radius: 5px;
+}
+footer li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 6px 0 0 0;
+}
+
+.footeraboutsection li,
+.footerblogrollsection li {
+  cursor: pointer;
+}
+.footeraboutsection {
+  padding-top: 30px;
+}
+.footercontactsection {
+  padding-top: 30px;
+}
+.footercontactsection a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.footercontainer > * h3 {
+  margin: 20px 0 20px 0;
+}
+.place-card,
+.place-card-medium {
+  display: none !important;
+}
+.forIframe {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 400px;
+  height: 400px;
+  right: 0;
+  position: absolute;
+}
+.foriframeunder {
+  height: 400px;
+  min-width: 500px;
+}
+@media (max-width: 800px) {
+  .footercontainer {
+    flex-wrap: wrap;
+  }
+  footer {
+    height: auto;
+  }
+  .footercontainer > * {
+    width: 40%;
+    margin-left: 15px;
+    padding-left: 0;
+  }
+
+  .forIframe {
+    display: none !important;
+  }
+  .foriframeunder {
+    display: none !important;
+  }
+  .footercopyright {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    padding: 120px 0 40px 0;
+  }
+}

@@ -1,137 +1,155 @@
-/* eslint-disable react/no-unescaped-entities */
+"use client";
 import "./Footer.css";
-import { useTranslation } from "react-i18next";
-import { BsInstagram } from "react-icons/bs";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
+import { FiLinkedin, FiInstagram, FiFacebook } from "react-icons/fi";
+import { useState, useEffect, useRef } from "react";
+import Swal from "sweetalert2";
+// import { createNewsletter } from "@/app/services/newsletter";
+import logo1 from "../../assets/logo/logo1.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-export default function Component() {
+export default function Footer() {
   const { t } = useTranslation();
+  // const localActive = useLocale();
+
+  // State to toggle email input visibility
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [email, setEmail] = useState("");
+  const formRef = useRef(null);
+
+  const handleNewsletterClick = () => {
+    setShowEmailInput(true); // Toggle the visibility
+  };
+
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    // createNewsletter({ email });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your Email has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    setEmail("");
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        setShowEmailInput(false);
+      }
+    };
+
+    if (showEmailInput) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showEmailInput]);
 
   return (
-    <footer>
-      <div className="footercontainer">
-        <div className="footerfirstsection">
-          <img src="" alt="maxshine logo" className="iconfooter" />
+    <footer className="footer">
+      <div className="top-footer">
+        <div className="left-footer">
+          <div className="logo">
+            <img src={logo1} alt="white-logo" />
+          </div>
+          <p>{t("footer.top-footer.description")}</p>
 
-          <h3 style={{ fontSize: "16.5px", width: "70%", margin: "0" }}>
-            {t("aboutus_title")}
-          </h3>
+          <button
+            id="newsletter-button"
+            // className={`${outfit.className}`}
+            onClick={handleNewsletterClick}
+            style={{
+              display: showEmailInput ? "none" : "block",
+              opacity: showEmailInput ? 0 : 1,
+              transition: "all 0.4s ease-in-out",
+            }}
+          >
+            {t("footer.top-footer.button")}
+          </button>
+
+          <form
+            onSubmit={handleEmailSubmit}
+            ref={formRef}
+            className="newsletter-form"
+            style={{
+              transition: "all 0.4s ease-in-out",
+              opacity: showEmailInput ? 1 : 0,
+            }}
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              id="email-input"
+              style={{
+                width: showEmailInput ? "22vw" : "10%",
+                transition: "all 0.5s ease-in-out",
+                display: showEmailInput ? "block" : "none",
+              }}
+            />
+            <button
+              type="submit"
+              id="submit-button"
+              className="submit-button"
+              style={{
+                left: showEmailInput ? "16vw" : "0",
+                transition: "all 0.5s ease-in-out",
+                cursor: "pointer",
+                right: "16vw",
+              }}
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <div className="footeraboutsection">
-          <h3 className="">{t("AboutSym")}</h3>
-          <ul className="">
-            <li>
-              <Link
-                to="/about"
-                style={{
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  color: "white",
-                }}
-              >
-                <ChevronRightIcon className="" />
-                {t("Our Company")}
-              </Link>
+        <div className="right-footer">
+          <ul>
+            <li className="title-liste">
+              {t("footer.top-footer.links.explore")}
             </li>
-            <li>
-              <Link
-                to="/products"
-                style={{
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  color: "white",
-                }}
-              >
-                <ChevronRightIcon className="" />
-                {t("productsNav")}
-              </Link>
+            <Link href="/#hero-section">
+              <li>{t("home")}</li>
+            </Link>
+            <Link href="/#about-section">
+              <li>{t("about")}</li>
+            </Link>
+            <Link href={`/Product`}>
+              <li>{t("products")}</li>
+            </Link>
+            <Link href={`/Contact`}>
+              <li>{t("contact")}</li>
+            </Link>
+          </ul>
+          <ul>
+            <li className="title-liste">
+              {t("footer.top-footer.links.useful-links.title")}
             </li>
-
-            <li>
-              <ChevronRightIcon className="" />
-              {t("Download Catalog")}
-            </li>
+            <li>{t("footer.top-footer.links.useful-links.Give-feedback")}</li>
+            <li>{t("footer.top-footer.links.useful-links.Support")}</li>
           </ul>
         </div>
-
-        <div className="footercontactsection">
-          <h3 className="">{t("ContactUs")}</h3>
-          <ul className="">
-            <li>+213 550 50 50 50</li>
-            <li>Email@gmail.com</li>
-            <li>
-              <a
-                href="https://web.facebook.com/profile.php?id=61558883573403"
-                target="_blank"
-              >
-                <FaSquareFacebook />
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/symindustrie/" target="_blank">
-                <BsInstagram /> Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/symindustrie/posts/?feedView=all"
-                target="_blank"
-              >
-                <FaLinkedin /> Linkedin
-              </a>
-            </li>
-            <li>
-              <a
-                href="
-                https://www.tiktok.com/@sym_industrie"
-                target="_blank"
-              >
-                <AiFillTikTok size={17} /> TikTok
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="forIframe">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25562.13920741331!2d2.9083640783265654!3d36.78813864996998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fbb154ab32cf7%3A0x44235dd8e0af0ec2!2sHamac%20Events!5e0!3m2!1sfr!2sdz!4v1731956571336!5m2!1sfr!2sdz"
-            width="400"
-            height="400"
-            style={{ border: 0 }}
-            allowfullscreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div className="foriframeunder"></div>
       </div>
-      <div className="footercopyright">
-        <p>{t("copyright")}</p>
+      <div className="bottom-footer">
+        <div className="social">
+          <a href="https://instagram.com" target="_blank">
+            <FiInstagram color="white" size={32} />
+          </a>
+          <a href="https://linkedin.com" target="_blank">
+            <FiLinkedin color="white" size={32} />
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <FiFacebook color="white" size={32} />
+          </a>
+        </div>
+        <p>{t("footer.copyright")}</p>
       </div>
     </footer>
-  );
-}
-
-function ChevronRightIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m9 18 6-6-6-6" />
-    </svg>
   );
 }

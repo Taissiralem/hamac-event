@@ -1,0 +1,142 @@
+.forswiper {
+  width: 100vw !important;
+  max-height: 71vh !important;
+  /* min-height: 20vh; */
+  overflow: hidden;
+  max-width: 100% !important;
+}
+
+.mySwiper {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  /* max-width: 100%; */
+  height: 100vh;
+}
+.slider-image {
+  width: 100%;
+  object-fit: cover;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  /* color: var(--primary-color) !important ; */
+  color: white !important;
+  font-size: larger;
+  /* background-color: white; */
+  padding: 25px;
+  border-radius: 12px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  top: 46% !important;
+}
+
+.iamtesting {
+  width: 100%;
+  height: 71vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: #007a9e;
+  position: relative;
+  color: white;
+}
+
+.iamtestinginside h1 {
+  font-size: 3.6rem;
+}
+
+.iamtestinginside p {
+  font-size: 2rem;
+}
+.iamtesting > img {
+  filter: brightness(0.5);
+}
+
+.iamtestinginside h2 {
+  font-size: 2.8rem;
+}
+.iamtestinginside {
+  position: absolute;
+  top: 0px;
+  left: 5vw;
+  margin: auto;
+  opacity: 0;
+  animation: apparition 1.2s ease-in-out forwards;
+  transform: translateY(0);
+}
+.iamtestinginside button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  opacity: 0;
+  animation: apparition2 1.2s ease-in-out forwards;
+  transform: translatex(0);
+}
+.iamtestinginside button a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(200px);
+  }
+}
+@keyframes apparition2 {
+  from {
+    opacity: 0;
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mySwiper .swiper-button-prev,
+  .mySwiper .swiper-button-next {
+    visibility: hidden;
+  }
+  .iamtestinginside h2 {
+    font-size: 1rem;
+    margin-top: 100px;
+  }
+  .iamtestinginside h1 {
+    font-size: 1.2rem;
+  }
+  .iamtestinginside p {
+    font-size: 0.8rem;
+  }
+  .iamtestinginside button {
+    padding: 10px;
+    font-size: 0.7rem;
+  }
+}

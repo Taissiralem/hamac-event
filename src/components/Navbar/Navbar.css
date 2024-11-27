@@ -12,6 +12,12 @@
   top: 0;
   z-index: 6;
 }
+.navbarmiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
 .navbar a {
   color: white;
   text-decoration: none;
@@ -55,6 +61,74 @@
   display: none;
   position: relative;
 }
+.language img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.language {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25.2px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 17px;
+  gap: 10px;
+  position: relative;
+  width: 190px;
+}
+.language-menu {
+  position: absolute;
+  bottom: -113px;
+  right: 0;
+  clip-path: inset(0 0 100% 0);
+  background-color: white;
+  z-index: 2;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+.language-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.language-menu ul li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  /* border-bottom: 1px rgba(231, 231, 231, 1) solid; */
+  width: 100%;
+  cursor: pointer;
+}
+.language-menu ul li:hover {
+  background-color: ghostwhite;
+}
+.language-menu ul li:last-child {
+  border-radius: 8px;
+}
+.language-menu ul li:first-child {
+  border-radius: 8px;
+}
+.active-language {
+  clip-path: inset(0 0 0 0);
+}
+.language > span {
+  text-transform: uppercase;
+  color: white;
+}
+.menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #151415;
+  border-radius: 8px;
+  height: 56px;
+  width: 56px;
+}
 @media (max-width: 600px) {
   .navbarfirst {
     display: none;
@@ -94,7 +168,6 @@
   font-size: 25px;
 }
 .navbarfirst a:hover {
-  background-color: #dc3b4d;
   transition: 0.3s;
   border-radius: 18px;
 }

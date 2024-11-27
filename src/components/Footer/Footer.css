@@ -1,116 +1,245 @@
-footer {
-  background-color: black;
-  color: white;
-  margin-top: 25px;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-.footercontainer {
+.footer {
+  background-color: #020412;
+  height: 562px;
   display: flex;
-  gap: 10px;
-  /* padding: 20px 0 50px 0; */
-  position: relative;
-  left: 0;
-  top: 0;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 220px 50px 220px;
+  justify-content: space-between;
+}
+.top-footer,
+.bottom-footer {
   width: 100%;
+  display: flex;
 }
-.footercontainer > * {
+
+.right-footer {
+  display: flex;
   width: 50%;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 150px;
 }
-.footercopyright {
-  text-align: center;
-  padding: 35px 0 15px 0;
-  position: absolute;
-  bottom: 20px;
-  left: 20vw;
-}
-.footerfirstsection {
-  width: 80% !important;
-  padding-top: 25px;
-  padding-left: 30px;
+.right-footer ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 25px;
+  width: auto;
+  width: max-content;
 }
-.footerfirstsection p {
-  width: 70%;
-  max-width: 600px;
-  line-height: 24px;
+.right-footer ul li {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
+  width: max-content;
 }
-.iconfooter {
-  width: 100px;
-  border-radius: 5px;
+.right-footer ul .title-liste {
+  font-size: 1.7rem;
+  font-weight: 600;
 }
-footer li {
-  list-style-type: none;
+.bottom-footer {
   display: flex;
   align-items: center;
-  margin: 6px 0 0 0;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.bottom-footer P {
+  color: white;
 }
 
-.footeraboutsection li,
-.footerblogrollsection li {
-  cursor: pointer;
-}
-.footeraboutsection {
-  padding-top: 30px;
-}
-.footercontactsection {
-  padding-top: 30px;
-}
-.footercontactsection a {
-  text-decoration: none;
-  color: white;
+.left-footer {
   display: flex;
-  gap: 5px;
-  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  position: relative;
 }
-.footercontainer > * h3 {
-  margin: 20px 0 20px 0;
+
+.left-footer .logo img {
+  height: 80px;
 }
-.place-card,
-.place-card-medium {
+.left-footer p {
+  width: 70%;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.left-footer button {
+  width: 225px;
+  background-color: white;
+  color: #020412;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 18.53px;
+  border-radius: 300px;
+  font-size: 23px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+#newsletter-button {
+  position: absolute;
+  bottom: 5px;
+  z-index: 9;
+}
+.left-footer .newsletter-form {
+  display: flex;
+  height: 70px;
+  margin-top: 70px; /* Same as the button margin-top */
+  width: 100%; /* Ensure it takes the same width */
+  position: relative;
+}
+
+.left-footer .newsletter-form input {
+  width: 23vw; /* Same width as the button */
+  padding: 15px;
+  border-radius: 300px;
+  border: 1px solid #ccc;
+  font-size: 17px;
+  height: 66px;
+}
+.left-footer .newsletter-form input:focus-visible {
+  outline: none;
+}
+.left-footer .newsletter-form .submit-button {
+  width: 125px;
+  background-color: #020412;
+  color: #ffffff;
+  border: 2px solid white !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 300px;
+  font-size: 20px;
+  border: none;
+  margin-top: 0;
+  height: 66px;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.left-footer button {
+  width: 225px;
+  background-color: white;
+  color: #020412;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 18.53px;
+  border-radius: 300px;
+  font-size: 23px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.left-footer button.hidden {
   display: none !important;
 }
-.forIframe {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: black;
-  color: white;
-  width: 400px;
-  height: 400px;
-  right: 0;
-  position: absolute;
-}
-.foriframeunder {
-  height: 400px;
-  min-width: 500px;
-}
-@media (max-width: 800px) {
-  .footercontainer {
-    flex-wrap: wrap;
+
+@media screen and (max-width: 1240px) {
+  .footer {
+    background-color: #020412;
+    height: 632px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 50px 70px 50px;
+    justify-content: space-between;
   }
-  footer {
-    height: auto;
+}
+@media screen and (max-width: 1070px) {
+}
+@media screen and (max-width: 468px) {
+  #email-input {
+    width: 90vw !important;
+    font-size: 14px;
   }
-  .footercontainer > * {
-    width: 40%;
-    margin-left: 15px;
-    padding-left: 0;
+  #submit-button {
+    left: 65vw !important;
+    width: 110px !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  .top-footer {
+    flex-direction: column;
   }
 
-  .forIframe {
-    display: none !important;
-  }
-  .foriframeunder {
-    display: none !important;
-  }
-  .footercopyright {
+  .left-footer {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
     position: relative;
-    left: 0;
-    bottom: 0;
-    padding: 120px 0 40px 0;
+  }
+
+  .right-footer {
+    width: 100%;
+  }
+  .footer {
+    height: 700px;
+    padding: 50px 50px 70px 50px;
+  }
+
+  .top-footer {
+    gap: 50px;
+    height: 443px;
+    justify-content: space-between;
+    position: relative;
+  }
+  .top-footer .logo {
+    display: none;
+  }
+  .left-footer p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .left-footer button {
+    width: 200px;
+    background-color: white;
+    color: #020412;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 300px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    z-index: 42;
+  }
+  .right-footer {
+    gap: 40px;
+  }
+  .right-footer ul li {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    width: max-content;
+  }
+  .right-footer ul .title-liste {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .social svg {
+    height: 20px;
+    width: 20px;
+  }
+  .newsletter-form {
+    position: absolute !important;
+    top: 50px;
+    justify-content: center;
+  }
+  .left-footer .newsletter-form input {
+    width: 80% !important;
+  }
+  .left-footer .newsletter-form .submit-button {
+    left: 70vw !important;
+    transform: translateX(-50%);
+  }
+  #newsletter-button {
+    bottom: -95px !important;
   }
 }

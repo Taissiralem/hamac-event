@@ -20,5 +20,93 @@
   "plus d'infos": "More infos",
   "see more": "See more",
   "Download Catalog": "Download Catalog",
-  "ContactUs": "Talk with our support"
+  "ContactUs": "Talk with our support",
+  "home": "Home",
+  "about": "About us",
+  "contact": "Contact us",
+  "products": "Products",
+  "Testimonials": "Testimonials",
+  "products-title": "Title for the Products",
+  "products-details": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+  "explore-btn": "Explore Products",
+  "Card-data-desc": "Your aspirations fuel our creativity, We begin by listening intently, understanding your goals, and envisioning.",
+  "data-title": "Read the ticket thoroughly to understand the costumer’s",
+  "data-title-title": "Visionary Consultation",
+  "see-more": "See more",
+  "product-section": {
+    "title": "Our Latest Products",
+    "description": "Introducing our latest Print marvel - Pushing boundaries and redefining print excellence."
+  },
+  "about-section": {
+    "title": "Discovering Design & Print Mastery Evolution",
+    "description": "Exploring the intersection of vision, innovation, craftsmanship, provision, and performing design & print solutions.",
+
+    "stats": {
+      "label1": "Ready to use products",
+
+      "label": "Customer satisfaction"
+    },
+    "buttons": {
+      "contact": "Contact us",
+      "book": "Book a call"
+    }
+  },
+  "right-vision": {
+    "title": "Multiprint's Journey to Printing Excellence",
+    "sections": {
+      "subtitle1": "Vision to Reality",
+      "text1": "Multiprint’s remarkable journey in the realm of design and print innovation has consistently steered the company towards a path of unparalleled excellence.",
+      "subtitle2": "Creating Dreams",
+      "text2": "Pioneering innovation, collaborative excellence, and unwavering commitment to transforming vision into timeless realities."
+    }
+  },
+  "contact-section": {
+    "title": "Let’s Build Your Vision",
+    "description": "Reach out to us for expert guidance, collaborative design, and tailored solutions to shape your vision into reality.",
+    "buttons": {
+      "contact": "Contact us",
+      "book": "Book a call"
+    }
+  },
+  "Testimonial-section": {
+    "title": "Testimonial",
+    "subtitle": "What our customers have to say"
+  },
+
+  "footer": {
+    "top-footer": {
+      "description": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to",
+      "button": "Newlsetter",
+      "links": {
+        "explore": "Explore",
+        "useful-links": {
+          "title": "Useful links",
+          "Give-feedback": "Give feedback",
+          "Support": "Support"
+        }
+      }
+    },
+    "copyright": "© 2024 multiprint all rights reserved"
+  },
+  
+    "title": "Do you still have questions?",
+    "description": "Can’t find the answer you’re looking for? Contact us!",
+    "name": "Name",
+    "first-name": "First Name",
+    "phone": "Phone number",
+    "describ": "Description",
+    "send": "Send",
+    "qst1": "All the options of the Basic Plan",
+    "rep1": "A secure online booking system and an intuitive dashboard to manage your bookings. Customize your profile with photos and descriptions, and receive email notifications for every new booking.",
+    "qst2": "Visibility on social media",
+    "rep2": "Benefit from promotion on our social media accounts to increase your visibility and reach a wider audience. Take advantage of our online presence to attract more potential customers.",
+    "qst3": "Advanced booking system",
+    "rep3": "Access additional booking features, such as customizing booking options and managing payments. Provide a smooth and professional booking experience for your customers.",
+    "qst4": "Enhanced dashboard",
+    "rep4": "Use advanced management tools for deeper analysis of your performance. Get detailed reports, track booking trends, and optimize your daily operations.",
+    "qst5": "Standard customer support",
+    "rep5": "Benefit from email and phone support to quickly resolve your issues and answer your questions. Our team is here to help you make the most of our tools.",
+    "qst-title": "Frequently Asked Questions",
+    "qst-desc": "Questions you might ask about our products and services."
+  
 }

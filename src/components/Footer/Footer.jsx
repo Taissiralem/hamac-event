@@ -138,13 +138,19 @@ export default function Footer() {
       </div>
       <div className="bottom-footer">
         <div className="social">
-          <a href="https://instagram.com" target="_blank">
+          <a href="https://www.instagram.com/hamac.events/" target="_blank">
             <FiInstagram color="white" size={32} />
           </a>
-          <a href="https://linkedin.com" target="_blank">
+          <a
+            href="https://www.linkedin.com/company/hamac-alg%C3%A9rie/"
+            target="_blank"
+          >
             <FiLinkedin color="white" size={32} />
           </a>
-          <a href="https://facebook.com" target="_blank">
+          <a
+            href="https://www.facebook.com/profile.php?id=100075646883318"
+            target="_blank"
+          >
             <FiFacebook color="white" size={32} />
           </a>
         </div>

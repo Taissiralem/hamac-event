@@ -1,3 +1,3 @@
 export default function NosServices() {
-  return <div>NosServices</div>;
+  return <section id="services">NosServices</section>;
 }

@@ -57,6 +57,9 @@
 .iamtestinginside h1 {
   font-size: 3.6rem;
 }
+.iamtesting p {
+  color: white;
+}
 
 .iamtestinginside p {
   font-size: 2rem;

@@ -1,19 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import "./NotFound.css";
-import image404 from "../../assets/svg/404.svg";
-import { Helmet } from "react-helmet";
-const NotFound = () => {
-  return (
-    <>
-     <Helmet>
-            <title>Not Found </title>
-         
-        </Helmet>
-      <div className="error-404">
-        <h1 className="notfound-title">page not found !</h1>
-        <img src={image404} alt="404 error" />
-      </div>
-    </>
-  );
-};
+// import image404 from "../../assets/svg/404.svg";
+export default function NotFound() {
+  const navigate = useNavigate();
 
-export default NotFound;
+  const handleGoHome = () => {
+    navigate("/");
+  };
+
+  return (
+    <div className="not-found-container">
+      <h1 className="not-found-title">404</h1>
+      <p className="not-found-message">
+        Oops! The page you are looking for doesn’t exist.
+      </p>
+      <button className="not-found-button" onClick={handleGoHome}>
+        Go Home
+      </button>
+    </div>
+  );
+}

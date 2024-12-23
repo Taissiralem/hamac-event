@@ -1,6 +1,6 @@
 
 export default function AboutUs() {
   return (
-    <div>AboutUs</div>
+    <section id="aboutus">AboutUs</section>
   )
 }

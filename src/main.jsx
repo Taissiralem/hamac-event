@@ -1,15 +1,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout.jsx";
 import { RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n/i18n.js";
-
-// const NotFound = lazy(() => import("./pages/NotFound/NotFound.jsx"));
+import Login from "./pages/Admin/Login/Login.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
+import { Provider } from "react-redux";
+import { store } from "./redux/store.js";
+import AdminLayout from "./layouts/AdminLayout.jsx";
+import AdminHome from "./pages/Admin/Home/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +20,27 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [{ path: "", element: <Home /> }],
   },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [{ path: "home", element: <AdminHome /> }],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+  {
+    path: "/auth/signin",
+    element: <Login />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <I18nextProvider i18n={i18n}>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </I18nextProvider>
   </StrictMode>
 );

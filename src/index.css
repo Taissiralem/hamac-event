@@ -15,6 +15,7 @@ textarea:focus {
 
 :root {
   --primary-color: #007a9e;
+  --primary-color-dark: #005f7b;
 }
 
 body,

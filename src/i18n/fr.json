@@ -4,7 +4,7 @@
   "goodbye": "Au revoir",
   "about-usNav": "À propos",
   "homeNav": "Accueil",
-  "productsNav": "Produits",
+  "ServicesNav": "Services",
   "btnNav": "Contactez-nous",
   "contact-usNav": "Contactez-nous",
   "aboutushomeh2": "À propos de nous",
@@ -27,51 +27,6 @@
   "about": "À propos de nous",
   "contact": "Contactez-nous",
   "products": "Produits",
-  "Testimonials": "Témoignages",
-  "products-title": "Titre pour les Produits",
-  "products-details": "En édition et en conception graphique, le Lorem ipsum est un texte de substitution couramment utilisé pour démontrer la forme visuelle d'un document ou d'une police de caractères sans se baser sur un contenu significatif. Le Lorem ipsum peut être utilisé comme espace réservé avant que le texte définitif ne soit disponible.",
-  "explore-btn": "Explorer les Produits",
-  "Card-data-desc": "Vos aspirations alimentent notre créativité. Nous commençons par écouter attentivement, comprendre vos objectifs et imaginer.",
-  "data-title": "Lisez attentivement le billet pour comprendre le client",
-  "data-title-title": "Consultation visionnaire",
-  "see-more": "Voir plus",
-  "product-section": {
-    "title": "Nos derniers produits",
-    "description": "Découvrez notre dernière merveille d'impression - repoussant les limites et redéfinissant l'excellence de l'impression."
-  },
-  "about-section": {
-    "title": "Découvrir l'évolution de la maîtrise du design et de l'impression",
-    "description": "Explorer l'intersection de la vision, de l'innovation, du savoir-faire, de la prestation et de la réalisation de solutions de design et d'impression.",
-    "stats": {
-      "label1": "Produits prêts à l'emploi",
-      "label": "Satisfaction client"
-    },
-    "buttons": {
-      "contact": "Contactez-nous",
-      "book": "Réserver un appel"
-    }
-  },
-  "right-vision": {
-    "title": "Le parcours de Multiprint vers l'excellence en impression",
-    "sections": {
-      "subtitle1": "De la vision à la réalité",
-      "text1": "Le parcours remarquable de Multiprint dans le domaine de l'innovation en design et impression a constamment orienté l'entreprise vers un chemin d'excellence inégalée.",
-      "subtitle2": "Créer des rêves",
-      "text2": "Innovation de pionnier, excellence collaborative et engagement indéfectible à transformer la vision en réalités intemporelles."
-    }
-  },
-  "contact-section": {
-    "title": "Construisons Votre Vision",
-    "description": "Contactez-nous pour des conseils d'experts, un design collaboratif et des solutions personnalisées pour concrétiser votre vision.",
-    "buttons": {
-      "contact": "Contactez-nous",
-      "book": "Réserver un appel"
-    }
-  },
-  "Testimonial-section": {
-    "title": "Témoignages",
-    "subtitle": "Ce que nos clients ont à dire"
-  },
   "footer": {
     "top-footer": {
       "description": "En édition et design graphique, Lorem ipsum est un texte de substitution couramment utilisé pour",
@@ -92,9 +47,9 @@
   "title": "Vous avez encore des questions ?",
   "description": "Vous ne trouvez pas la réponse que vous cherchez ? Contactez-nous !",
   "name": "Nom",
-  "first-name": "Prenom",
-  "email": "email",
-  "phone": "Numero de telphone",
+  "first-name": "Prénom",
+  "email": "E-mail",
+  "phone": "Numéro de téléphone",
   "describ": "description",
   "send": "Envoyer",
   "qst1": "Toutes les options du Plan Basique",
@@ -108,5 +63,16 @@
   "qst5": "Support client standard",
   "rep5": "Bénéficiez d'une assistance par e-mail et téléphone pour résoudre rapidement vos problèmes et répondre à vos questions. Notre équipe est là pour vous aider à tirer le meilleur parti de nos outils.",
   "qst-title": "Questions fréquemment posées",
-  "qst-desc": "Question you might ask about our products and services."
+  "qst-desc": "Question you might ask about our products and services.",
+  "tool": {
+    "header1_1": "Team Building",
+    "description_1": "Inspirez vos équipes avec nos activités de team building innovantes.",
+    "header1_2": "Démarquez-vous avec nos stands sur mesure",
+    "description_2": "Conception 3D, réalisation et installation : nous vous offrons des stands professionnels qui reflètent votre marque et attirent l’attention lors de vos salons.",
+    "header1_3": "Accompagnement Global pour Entreprises",
+    "description_3": "Un partenaire stratégique pour vos besoins professionnels."
+  },
+  "button": {
+    "learn_more": "En savoir plus"
+  }
 }

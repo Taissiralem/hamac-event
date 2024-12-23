@@ -1,0 +1,57 @@
+.sidebar {
+  background-color: var(--primary-color);
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+.admin-logo {
+  height: 12vh;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+.sidebar-items {
+  width: 100%;
+}
+.sidebar-item a {
+  text-decoration: none;
+}
+.sidebar-item {
+  list-style: none;
+}
+.side-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 17px 20px;
+}
+.side-bar-content:hover {
+  background-color: var(--primary-color-dark);
+}
+.sidebar-icons {
+  color: white;
+  font-size: 35px;
+}
+.sidebar-texts {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.active * {
+  background-color: grey !important;
+}
+.forsidebar {
+  width: 20%;
+  height: 100vh;
+}
+
+.logout {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+}

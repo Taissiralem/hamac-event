@@ -1,12 +1,38 @@
-.error-404 {
+.not-found-container {
   text-align: center;
-  padding-top: 20vh;
-  height: 80vh;
-  letter-spacing: 1px;
-  box-sizing: border-box;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.error-404 img {
-  height: 330px;
-  margin-top: 20px;
+.not-found-title {
+  font-size: 6rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.not-found-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.not-found-button:hover {
+  background-color: var(--primary-color-dark);
 }

@@ -4,7 +4,6 @@ import Global from "../../assets/slider/pic2.webp";
 import Custom from "../../assets/slider/pic3.webp";
 
 import { useNavigate } from "react-router-dom";
-import ScrollAnimation from "react-animate-on-scroll";
 import { useTranslation } from "react-i18next"; // Importer le hook
 
 export default function Cards() {
@@ -17,21 +16,21 @@ export default function Cards() {
       titlefr: "Team Building",
       titleen: "Team Building",
       image: Team,
-      navigate: "/",
+      navigate: "/services/team-building",
     },
     {
       id: 2,
       titlefr: "Accompagnement",
       titleen: "Global Support",
       image: Global,
-      navigate: "/",
+      navigate: "/services/global-support",
     },
     {
       id: 3,
       titlefr: "Stands Personnalisés",
       titleen: "Custom Stands",
       image: Custom,
-      navigate: "/",
+      navigate: "/services/custom-stands",
     },
   ];
 
@@ -45,7 +44,7 @@ export default function Cards() {
           className="cardscard"
           style={{ backgroundImage: `url(${product.image})` }}
         >
-          <h1 onClick={() => navigate(`/products${product.navigate}`)}>
+          <h1 onClick={() => navigate(`${product.navigate}`)}>
             {title}
           </h1>
         </div>

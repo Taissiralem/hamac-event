@@ -1,6 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import logo1 from "../../assets/logo/logo1.png";
 import { changeLanguage } from "i18next";
 import { useTranslation } from "react-i18next";
@@ -18,7 +18,34 @@ export default function Navbar() {
 
   const [isLanguage, setIsLanguage] = useState(false);
   const language = i18n.language;
-  console.log(useSelector((state) => state.auth));
+  const languageMenuRef = useRef(null); // Ref for the language menu
+
+  const handleNavigationToSection = (sectionId) => {
+    navigate("/"); // Navigate to the landing page
+    setTimeout(() => {
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // Delay to ensure the page is fully loaded
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        languageMenuRef.current &&
+        !languageMenuRef.current.contains(event.target)
+      ) {
+        setIsLanguage(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -36,8 +63,24 @@ export default function Navbar() {
 
         <div className="navbarmiddle">
           <NavLink to={"/"}>{t("homeNav")}</NavLink>
-          <a href="#aboutus">{t("about-usNav")}</a>
-          <a href="#services">Services</a>
+          <a
+            href="#aboutus"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default anchor behavior
+              handleNavigationToSection("#aboutus");
+            }}
+          >
+            {t("about-usNav")}
+          </a>
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default anchor behavior
+              handleNavigationToSection("#services");
+            }}
+          >
+            Services
+          </a>
           <NavLink to={"/contact"}>{t("contact-usNav")}</NavLink>
 
           {isauth && <NavLink to={"/admin/home"}>Dashboard</NavLink>}
@@ -63,6 +106,7 @@ export default function Navbar() {
             <RiMenu3Fill color="white" size={23} />
           </div>
           <div
+            ref={languageMenuRef} // Attach the ref here
             className={
               isLanguage ? "language-menu active-language" : "language-menu"
             }

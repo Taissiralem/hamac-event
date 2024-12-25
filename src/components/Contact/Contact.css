@@ -23,7 +23,7 @@
   display: flex;
   width: 100%;
   min-height: 35px;
-  max-height: 55px;
+  max-height: 65px;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -31,7 +31,8 @@
 }
 .question span:first-child p {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
+  margin: 0;
 }
 .rep {
   max-height: 0px;
@@ -228,10 +229,26 @@
 @media screen and (max-width: 650px) {
   .contact-page {
     flex-direction: column;
+    padding: 20px 20px;
   }
   .left,
   .right {
     width: 100%;
+  }
+  .left > p {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .left > h1,
+  .right h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .right form {
+    margin-top: 10px;
+  }
+  .right > p {
+    text-align: center;
   }
 }
 @media screen and (max-width: 590px) {

@@ -13,12 +13,32 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import AdminLayout from "./layouts/AdminLayout.jsx";
 import AdminHome from "./pages/Admin/Home/Home.jsx";
+import TeamBuilding from "./pages/TeamBuilding/TeamBuilding.jsx";
+import Accompagnement from "./pages/Accompagnement/Accompagnement.jsx";
+import Stands from "./pages/Stands/Stands.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    children: [{ path: "", element: <Home /> }],
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "services/team-building",
+        element: <TeamBuilding />,
+      },
+      {
+        path: "services/global-support",
+        element: <Accompagnement />,
+      },
+      {
+        path: "services/custom-stands",
+        element: <Stands />,
+      },
+    ],
   },
   {
     path: "/admin",

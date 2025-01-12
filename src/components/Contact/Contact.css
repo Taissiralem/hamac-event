@@ -86,7 +86,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 50px;
 }
 .right input,
 .right .input-container:last-child input {

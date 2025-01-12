@@ -40,13 +40,14 @@ export default function Cards() {
 
     return (
       <div key={product.id} className="cardsmain">
-        <div
-          className="cardscard"
-          style={{ backgroundImage: `url(${product.image})` }}
-        >
-          <h1 onClick={() => navigate(`${product.navigate}`)}>
-            {title}
-          </h1>
+        <div className="overlaycards">
+          <div className="h1">{title}</div>
+
+          <div
+            onClick={() => navigate(`${product.navigate}`)}
+            className="cardscard"
+            style={{ backgroundImage: `url(${product.image})` }}
+          ></div>
         </div>
       </div>
     );

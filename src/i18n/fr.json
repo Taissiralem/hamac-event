@@ -11,7 +11,6 @@
   "aboutushomeh1": "Hamac Events",
   "copyright": "Copyright © 2024 Hamac Events. Tous droits réservés.",
   "footerAbout": "Hamac Events est votre partenaire de choix pour des solutions industrielles de haute qualité. Spécialisés dans l’importation et la distribution de marques mondiales, nous nous concentrons sur la fixation et l’outillage professionnel, ainsi que sur le matériel de detailing automobile.",
-  "email": "Email",
   "password": "Mot de passe",
   "Continuer": "Continuer",
   "firstname": "Prénom",
@@ -74,5 +73,16 @@
   },
   "button": {
     "learn_more": "En savoir plus"
-  }
+  },
+  "titleabout": "Nous nous engageons à offrir des produits.",
+  "subtitle1": "D'une vision à la réalité",
+  "description1": "Notre vision: Apporter les  essentielles au bien être physique, physiologique et cognitif.",
+  "subtitle2": "Engagement",
+  "description2": "Notre engagement : garantir une satisfaction à nos clients dans leurs recherches de bien être.",
+  "title2": "Votre bien-être et votre sont notre priorité !",
+  "subtitle3": " de recherches à développer des compléments essentiels, issus de propriété naturelles apportant énergie, pureté et santé revitalisée au quotidien.",
+  "readyToUse": "Produits prêts à l'emploi",
+  "satisfaction": "Satisfaction client",
+  "contactButton": "Contactez-nous",
+  "bookButton": "Réserver un appel"
 }

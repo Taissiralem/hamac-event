@@ -1,0 +1,57 @@
+#Team-building {
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.bannerHeader {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.banner {
+  padding: 45px;
+  background-color: #00799e4c;
+  /* background-color: rgba(0, 0, 0, 0.45); */
+}
+
+.sorties {
+  padding: 20px 70px;
+}
+.sorties h1 {
+  margin-bottom: 0;
+}
+
+.contact-form {
+  width: 50%;
+}
+
+.rightTB {
+  margin-left: 90px;
+}
+.teambuildingHR {
+  margin: 0 35% 40px 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
+  .rightTB {
+    margin-left: 0;
+    padding: 15px;
+  }
+  .sorties {
+    padding: 20px 20px;
+  }
+  .teambuildingHR {
+    margin: 0 10% 40px 10%;
+  }
+  .bannerHeader {
+    font-size: 2.5rem;
+  }
+  .card {
+    width: 50%;
+  }
+}

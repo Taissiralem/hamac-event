@@ -162,6 +162,9 @@
     color: black;
     height: 35px;
   }
+  .language {
+    display: none;
+  }
 }
 .burgermenu {
   color: white;

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import City2 from "../../assets/Rectangle25.png";
+import City2 from "../../assets/slider/pic1.jpg";
 import City from "../../assets/Rectangle1.webp";
 
 import "./AboutUs.css";

@@ -44,7 +44,10 @@ export default function Cards() {
           <div className="h1">{title}</div>
 
           <div
-            onClick={() => navigate(`${product.navigate}`)}
+            onClick={() => {
+              navigate(`${product.navigate}`);
+              window.scrollTo(0, 0);
+            }}
             className="cardscard"
             style={{ backgroundImage: `url(${product.image})` }}
           ></div>

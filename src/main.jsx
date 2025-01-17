@@ -16,6 +16,8 @@ import AdminHome from "./pages/Admin/Home/Home.jsx";
 import TeamBuilding from "./pages/TeamBuilding/TeamBuilding.jsx";
 import Accompagnement from "./pages/Accompagnement/Accompagnement.jsx";
 import Stands from "./pages/Stands/Stands.jsx";
+import SortiesAdmin from "./pages/Admin/Sorties-add/Sorties-add.jsx";
+import SortiesAddForm from "./pages/Admin/Sorties-add-form/Sorties-add-form.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +45,17 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminLayout />,
-    children: [{ path: "home", element: <AdminHome /> }],
+    children: [
+      { path: "home", element: <AdminHome /> },
+      {
+        path: "tb-sorties",
+        element: <SortiesAdmin />,
+      },
+      {
+        path: "tb-sorties/add-form",
+        element: <SortiesAddForm />,
+      },
+    ],
   },
   {
     path: "*",

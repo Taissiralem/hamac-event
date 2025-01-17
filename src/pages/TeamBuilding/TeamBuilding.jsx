@@ -11,15 +11,19 @@ export default function TeamBuilding() {
       {/* hna ajout de blabla and img team building */}
       <div className="sorties">
         <h1>Sorties Proposées :</h1>
-        <Sorties></Sorties>
+
+        <Sorties href={"#contact-tb"}></Sorties>
       </div>
       {/* <div className="reserve-button-wrapper">
         <button className="reserve-button">JE RÉSERVE</button>
       </div> */}
-      <hr  className="teambuildingHR"/>
+      <hr className="teambuildingHR" id="contact-tb" />
       <div className="right rightTB">
         <h2>Réserver votre Sortie dès maintenant!</h2>
-        <p>Envoyez nous vos cordonnées pour que nous puissions arranger votre sortie</p>
+        <p>
+          Envoyez nous vos cordonnées pour que nous puissions arranger votre
+          sortie
+        </p>
         <ContactForm />
       </div>
     </section>

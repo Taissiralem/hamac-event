@@ -1,8 +1,7 @@
-import React from "react";
 import "./Sorties.css"; // Optional CSS for styling
 import Card from "../../assets/Rectangle1.webp";
 
-const CardComponent = () => {
+const CardComponent = ({ href }) => {
   const cards = [
     {
       image: Card, // Replace with the actual image URL
@@ -46,15 +45,17 @@ const CardComponent = () => {
     <div className="cards-container">
       {cards.map((card, index) => (
         <div className="card" key={index}>
-          <div className="card-image-wrapper">
-            <img src={card.image} alt={card.title} className="card-image" />
-            <span className="card-badge">{card.badge}</span>
-          </div>
-          <div className="card-content">
-            <h3 className="card-title">{card.title}</h3>
-            <p className="card-date">{card.date}</p>
-            <p className="card-description">{card.description}</p>
-          </div>
+          <a className="cards-unset" href={href}>
+            <div className="card-image-wrapper">
+              <img src={card.image} alt={card.title} className="card-image" />
+              <span className="card-badge">{card.badge}</span>
+            </div>
+            <div className="card-content">
+              <h3 className="card-title">{card.title}</h3>
+              <p className="card-date">{card.date}</p>
+              <p className="card-description">{card.description}</p>
+            </div>
+          </a>
         </div>
       ))}
     </div>

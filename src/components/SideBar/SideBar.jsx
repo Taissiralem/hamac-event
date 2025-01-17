@@ -7,6 +7,7 @@ import Logo from "../../assets/logo/logo1.png";
 import { SlLogout } from "react-icons/sl";
 import { useDispatch } from "react-redux"; // Import useDispatch
 import { logout } from "../../redux/slices/authSlice"; // Import logout action
+import { RiTeamFill } from "react-icons/ri";
 
 const SideBar = () => {
   const dispatch = useDispatch(); // Initialize dispatch
@@ -16,6 +17,7 @@ const SideBar = () => {
     { icon: <IoHome />, text: "Home", link: "/admin/home" },
     { icon: <IoMdStats />, text: "Stat", link: "/admin/stat" },
     { icon: <LuNewspaper />, text: "Newsletter", link: "newsletter" },
+    { icon: <RiTeamFill />, text: "Team Building", link: "tb-sorties" },
   ];
 
   const handleLogout = () => {

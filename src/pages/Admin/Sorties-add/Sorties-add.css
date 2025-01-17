@@ -1,0 +1,14 @@
+.sorties-add-container {
+  position: relative;
+}
+.add-btn {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  font-size: larger;
+}

@@ -2,7 +2,7 @@
   position: relative;
 }
 .add-btn {
-  position: absolute;
+  position: fixed;
   right: 25px;
   bottom: 25px;
   border: none;
@@ -11,4 +11,6 @@
   color: white;
   padding: 8px 15px;
   font-size: larger;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

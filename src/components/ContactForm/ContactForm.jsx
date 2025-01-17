@@ -3,14 +3,14 @@ import { FiUser, FiPhone } from "react-icons/fi";
 import { FaRegFileAlt } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import Swal from "sweetalert2";
-// import { createContact } from "../";
+import { createContact } from "../../services/contactservices";
 import { useTranslation } from "react-i18next";
 
 const initialFormData = {
   firstname: "",
   name: "",
   email: "",
-  phone: "",
+  phonenumber: "",
   message: "",
 };
 
@@ -26,7 +26,7 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // await createContact(formData);
+      await createContact(formData);
       setFormData(initialFormData);
       Swal.fire({
         position: "top-end",
@@ -87,8 +87,8 @@ export default function ContactForm() {
       <div className="input-container">
         <input
           type="text"
-          name="phone"
-          value={formData.phone}
+          name="phonenumber"
+          value={formData.phonenumber}
           onChange={handleInputChange}
           required
         />

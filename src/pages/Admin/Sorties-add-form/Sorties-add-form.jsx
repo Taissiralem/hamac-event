@@ -188,7 +188,7 @@ const AddSortieForm = () => {
           />
         </div>
         <button type="submit" className="submit-button" disabled={loading}>
-          {loading ? "Loading..." : "Create Sortie"}
+          {loading ? "Loading..." : "Créer une sortie"}
         </button>
       </form>
     </div>

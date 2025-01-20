@@ -12,7 +12,7 @@ export default function ContactPage() {
       <div className="right">
         <h2>{t("title")}</h2>
         <p>{t("description")}</p>
-        <ContactForm />
+        <ContactForm motif={"Landing page"} />
       </div>
     </main>
   );

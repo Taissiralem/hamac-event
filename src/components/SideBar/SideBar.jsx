@@ -18,6 +18,7 @@ const SideBar = () => {
     { icon: <IoMdStats />, text: "Stat", link: "/admin/stat" },
     { icon: <LuNewspaper />, text: "Newsletter", link: "newsletter" },
     { icon: <RiTeamFill />, text: "Team Building", link: "tb-sorties" },
+    { icon: <RiTeamFill />, text: "Contact messages", link: "contact" },
   ];
 
   const handleLogout = () => {

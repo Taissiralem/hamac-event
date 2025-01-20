@@ -6,15 +6,16 @@ import Swal from "sweetalert2";
 import { createContact } from "../../services/contactservices";
 import { useTranslation } from "react-i18next";
 
-const initialFormData = {
-  firstname: "",
-  name: "",
-  email: "",
-  phonenumber: "",
-  message: "",
-};
+export default function ContactForm({ motif }) {
+  const initialFormData = {
+    firstname: "",
+    name: "",
+    email: "",
+    phonenumber: "",
+    message: "",
+    motif: motif,
+  };
 
-export default function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
   const { t } = useTranslation();
 
@@ -51,8 +52,8 @@ export default function ContactForm() {
         <div className="input-container">
           <input
             type="text"
-            name="firstname"
-            value={formData.firstname}
+            name="firstName"
+            value={formData.firstName}
             onChange={handleInputChange}
             required
           />

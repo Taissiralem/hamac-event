@@ -24,7 +24,7 @@ export default function TeamBuilding() {
           Envoyez nous vos cordonnées pour que nous puissions arranger votre
           sortie
         </p>
-        <ContactForm />
+        <ContactForm motif={"Team Building"} />
       </div>
     </section>
   );

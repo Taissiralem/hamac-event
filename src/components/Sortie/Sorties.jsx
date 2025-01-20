@@ -9,7 +9,6 @@ const CardComponent = ({ href }) => {
   useEffect(() => {
     getSorties().then((data) => {
       setSorties(data.data.sorties);
-      console.log(data.data);
     });
   }, []);
 

@@ -18,6 +18,7 @@ import Accompagnement from "./pages/Accompagnement/Accompagnement.jsx";
 import Stands from "./pages/Stands/Stands.jsx";
 import SortiesAdmin from "./pages/Admin/Sorties-add/Sorties-add.jsx";
 import SortiesAddForm from "./pages/Admin/Sorties-add-form/Sorties-add-form.jsx";
+import Contact from "./pages/Admin/Contact/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "tb-sorties/add-form",
         element: <SortiesAddForm />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },

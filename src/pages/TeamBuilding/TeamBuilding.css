@@ -13,6 +13,7 @@
 .banner {
   padding: 45px;
   background-color: #00799e4c;
+  width: 100vw;
   /* background-color: rgba(0, 0, 0, 0.45); */
 }
 
@@ -32,6 +33,14 @@
 }
 .teambuildingHR {
   margin: 0 35% 88px 35%;
+}
+.blablaTb {
+  width: 100%;
+  margin-top: 40px;
+  padding: 2% 10%;
+}
+.forblabla {
+  flex-direction: row-reverse;
 }
 
 @media screen and (max-width: 768px) {
@@ -55,3 +64,9 @@
     width: 50%;
   }
 }
+
+/* @media screen and (max-width: 1240px) {
+  .blablaTb {
+    flex-direction: column;
+  }
+} */

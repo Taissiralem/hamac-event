@@ -14,7 +14,7 @@ export default function AboutSection() {
     const counters = countersRef.current;
     const animateCounter = (counter, endValue) => {
       let startValue = 0;
-      const duration = 2000;
+      const duration = 2900;
       const step = endValue / (duration / 16);
 
       const updateCounter = () => {
@@ -59,25 +59,43 @@ export default function AboutSection() {
         </div>
         <div className="fortextabout">
           <h1>{t("titleabout")}</h1>
-          <h2>{t("subtitle1")}</h2>
           <p>{t("description1")}</p>
-          <h2>{t("subtitle2")}</h2>
           <p>{t("description2")}</p>
         </div>
       </div>
 
       <div className="forabout">
         <div
-          className="fortextabout"
+          className="fortextabout secondtextabout"
           style={{ textAlign: "left", marginRight: "30px" }}
         >
-          <h1 style={{ marginBottom: "10px" }}>{t("title2")}</h1>
-          <h2 style={{ fontSize: "22px" }}>{t("subtitle3")}</h2>
+          <h1 style={{ marginBottom: "10px" }}> {t("title2")}</h1>
+          <h2>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>{t("title3+")}</span>
+            {t("subtitle3")}
+          </h2>
+          <h2>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>{t("title4+")}</span>
+            {t("subtitle4")}
+          </h2>
+          <h2>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>{t("title5+")}</span>
+            {t("subtitle5")}
+          </h2>
+          <h2>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>{t("title6+")}</span>
+            {t("subtitle6")}
+          </h2>
+          <h2 style={{ color: "black" }}>{t("subtitle7")}</h2>
           <div className="statsabout">
             <div>
               <div className="forcounter">
                 <h4>+</h4>
-                <h4 ref={(el) => (countersRef.current[0] = el)} data-end="11">
+                <h4 ref={(el) => (countersRef.current[0] = el)} data-end="7">
                   0
                 </h4>
               </div>

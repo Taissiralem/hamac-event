@@ -1,14 +1,28 @@
 import "./TeamBuilding.css";
 import Sorties from "../../components/Sortie/Sorties";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import { useTranslation } from "react-i18next";
+import City from "../../assets/Rectangle1.webp";
 
 export default function TeamBuilding() {
+  const { t } = useTranslation();
   return (
     <section id="Team-building">
       <div className="banner">
         <h1 className="bannerHeader">Team Building</h1>
       </div>
-      {/* hna ajout de blabla and img team building */}
+      <div className="blablaTb">
+        <div className="forabout forblabla"  >
+          <div className="forimgabout">
+            <img src={City} alt="Img" />
+          </div>
+          <div className="fortextabout">
+            <h1 style={{ fontSize: "32px" }}>{t("titleTb")}</h1>
+            <p>{t("description1Tb")}</p>
+            <p>{t("description2Tb")}</p>
+          </div>
+        </div>
+      </div>
       <div className="sorties">
         <h1>Sorties Proposées :</h1>
 

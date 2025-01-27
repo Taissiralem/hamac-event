@@ -74,15 +74,31 @@
   "button": {
     "learn_more": "En savoir plus"
   },
-  "titleabout": "Nous nous engageons à offrir des produits.",
+  "titleabout": "Qui sommes-nous ?",
   "subtitle1": "D'une vision à la réalité",
-  "description1": "Notre vision: Apporter les  essentielles au bien être physique, physiologique et cognitif.",
+  "description1": "Hamac Events vous libère de tous les soucis liés à l’organisation de vos événements. Experts en conception et réalisation sur mesure, nous créons des expériences uniques qui reflètent votre vision, et ce, partout en Algérie. Grâce à une équipe talentueuse et engagée, nous transformons vos idées en moments mémorables et impactants.",
   "subtitle2": "Engagement",
-  "description2": "Notre engagement : garantir une satisfaction à nos clients dans leurs recherches de bien être.",
-  "title2": "Votre bien-être et votre sont notre priorité !",
-  "subtitle3": " de recherches à développer des compléments essentiels, issus de propriété naturelles apportant énergie, pureté et santé revitalisée au quotidien.",
-  "readyToUse": "Produits prêts à l'emploi",
+  "description2": "Nous travaillons main dans la main avec des entreprises, des organisations et des particuliers pour proposer des solutions adaptées. Que ce soit pour un événement d’entreprise, un team building, une foire ou un salon professionnel, notre mission est de vous accompagner avec créativité, rigueur et professionnalisme",
+  "title2": "Nos valeurs :",
+  "title3+": "Innovation : ",
+  "subtitle3": " Imaginer des concepts originaux pour répondre à vos besoins spécifiques.",
+
+  "title4+": "Excellence : ",
+  "subtitle4": "Porter une attention méticuleuse aux détails pour un rendu impeccable.",
+
+  "title5+": "Collaboration : ",
+  "subtitle5": "Construire vos projets autour de votre vision et de vos attentes.",
+
+  "title6+": "Durabilité : ",
+  "subtitle6": "Proposer des options écoresponsables pour des événements respectueux de l’environnement.",
+  "subtitle7": "Avec Hamac Events, chaque projet devient une opportunité de marquer les esprits et de faire la différence.",
+
+  "readyToUse": "Services personnalisés",
   "satisfaction": "Satisfaction client",
   "contactButton": "Contactez-nous",
-  "bookButton": "Réserver un appel"
+  "bookButton": "Réserver un appel",
+
+  "titleTb": "C'est quoi le Team Building ? ",
+  "description1Tb": "Le succès d'une entreprise repose sur des équipes soudées et performantes. Le team building est une opportunité unique de renforcer les liens, d'améliorer la communication et de créer un environnement de travail positif. Chez Hamac Events, nous concevons des expériences sur mesure dans des cadres exceptionnels, combinant défis stimulants et moments de détente. Découvrez nos destinations exclusives et offrez à votre équipe une expérience qui allie plaisir et développement professionnel.",
+  "description2Tb": "Le team building est au cœur de notre approche pour renforcer la cohésion et l’engagement des équipes. En offrant des expériences uniques et personnalisées, Hamac Events transforme vos moments de collaboration en opportunités de croissance collective."
 }

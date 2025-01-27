@@ -32,6 +32,7 @@
 .fortextabout p {
   /* width: 75%; */
   font-size: 22px;
+  text-align: justify;
 }
 
 .forabout {
@@ -39,11 +40,19 @@
   gap: 100px;
   justify-content: space-between;
 }
+.secondtextabout h2 {
+  color: #555;
+  font-size: 20px;
+}
+
+.secondtextabout h2 span {
+  color: #000000;
+}
 
 .statsabout {
   display: flex;
   gap: 35px;
-  margin-top: 55px;
+  margin-top: 25px;
 }
 .statsabout div {
   display: flex;
@@ -72,7 +81,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .buttonsabout button:last-child {

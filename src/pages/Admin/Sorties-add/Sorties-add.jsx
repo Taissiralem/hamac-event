@@ -16,7 +16,7 @@ export default function Sorties() {
         <h1 style={{ padding: "25px 0 0 20px ", margin: "0" }}>
           Gérer vos sorties
         </h1>
-        <Sortiess></Sortiess>
+        <Sortiess href={"card._id"}></Sortiess>
         <button className="add-btn" onClick={() => Navigate("add-form")}>
           Ajouter une sortie
         </button>

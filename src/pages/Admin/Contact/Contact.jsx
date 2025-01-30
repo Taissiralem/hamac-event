@@ -17,7 +17,6 @@ function createData(name, firstName, email, phonenumber, motif, message, id) {
 
 export default function BasicTable() {
   const [contact, setContact] = useState([]);
-  console.log(contact);
   const rows = contact.map((elem) =>
     createData(
       elem.name,

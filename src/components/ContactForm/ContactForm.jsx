@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FiUser, FiPhone } from "react-icons/fi";
 import { FaRegFileAlt } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { GrLocationPin } from "react-icons/gr";
+
 import Swal from "sweetalert2";
 import { createContact } from "../../services/contactservices";
 import { useTranslation } from "react-i18next";
@@ -96,6 +98,17 @@ export default function ContactForm({ motif }) {
         <label>{t("phone")}</label>
         <FiPhone className="icon-contact" />
       </div>
+      {/* <div className="input-container">
+        <input
+          type="text"
+          name="phonenumber"
+          value={formData.phonenumber}
+          onChange={handleInputChange}
+          required
+        />
+        <label>{t("Sortie")}</label>
+        <GrLocationPin hone className="icon-contact" />
+      </div> */}
 
       <div className="input-container text-area">
         <textarea

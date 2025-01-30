@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import AuthReducer from "./slices/authSlice";
+import chosenSortieReducer from "./slices/chosenSortieSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import { thunk } from "redux-thunk";
@@ -13,6 +14,7 @@ const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
     auth: AuthReducer,
+    chosenSortie: chosenSortieReducer,
   })
 );
 

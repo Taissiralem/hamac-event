@@ -3,8 +3,11 @@ import Sorties from "../../components/Sortie/Sorties";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import { useTranslation } from "react-i18next";
 import City from "../../assets/Rectangle1.webp";
+import { useSelector } from "react-redux";
 
 export default function TeamBuilding() {
+  const clickedSortie = useSelector((state) => state.chosenSortie.id);
+
   const { t } = useTranslation();
   return (
     <section id="Team-building">
@@ -12,7 +15,7 @@ export default function TeamBuilding() {
         <h1 className="bannerHeader">Team Building</h1>
       </div>
       <div className="blablaTb">
-        <div className="forabout forblabla"  >
+        <div className="forabout forblabla">
           <div className="forimgabout">
             <img src={City} alt="Img" />
           </div>
@@ -24,7 +27,7 @@ export default function TeamBuilding() {
         </div>
       </div>
       <div className="sorties">
-        <h1>Sorties Proposées :</h1>
+        <h1> {t("sortiesPropose")} </h1>
 
         <Sorties href={"#contact-tb"}></Sorties>
       </div>
@@ -38,7 +41,7 @@ export default function TeamBuilding() {
           Envoyez nous vos cordonnées pour que nous puissions arranger votre
           sortie
         </p>
-        <ContactForm motif={"Team Building"} />
+        <ContactForm motif={`Team Building / ${clickedSortie}`} />
       </div>
     </section>
   );

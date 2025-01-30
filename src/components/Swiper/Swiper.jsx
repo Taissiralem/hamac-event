@@ -25,7 +25,7 @@ const swiperItems = [
     image: pic2,
     header1: "tool.header1_2",
     description: "tool.description_2",
-    button: "button.learn_more",
+    button: "button.explore",
     link: "/products/664e87fc4cf5a42abd0b5e33",
   },
   {
@@ -33,7 +33,7 @@ const swiperItems = [
     image: pic3,
     header1: "tool.header1_3",
     description: "tool.description_3",
-    button: "button.learn_more",
+    button: "button.explore_exp",
 
     link: "/products/664e88614cf5a42abd0b5e37",
   },

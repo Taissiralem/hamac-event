@@ -2,30 +2,22 @@
   "welcome": "Bienvenue",
   "hello": "Bonjour",
   "goodbye": "Au revoir",
-  "about-usNav": "À propos",
-  "homeNav": "Accueil",
-  "ServicesNav": "Services",
-  "btnNav": "Contactez-nous",
-  "contact-usNav": "Contactez-nous",
-  "aboutushomeh2": "À propos de nous",
-  "aboutushomeh1": "Hamac Events",
-  "copyright": "Copyright © 2024 Hamac Events. Tous droits réservés.",
-  "footerAbout": "Hamac Events est votre partenaire de choix pour des solutions industrielles de haute qualité. Spécialisés dans l’importation et la distribution de marques mondiales, nous nous concentrons sur la fixation et l’outillage professionnel, ainsi que sur le matériel de detailing automobile.",
-  "password": "Mot de passe",
-  "Continuer": "Continuer",
-  "firstname": "Prénom",
-  "lastname": "Nom",
-  "phonenumber": "Numéro de téléphone",
-  "plus d'infos": "Plus d'infos",
-  "see more": "Voir plus",
-  "Download Catalog": "Télécharger le catalogue",
-  "ContactUs": "Contacter notre support",
-  "testing": "testing",
-
   "home": "Accueil",
   "about": "À propos de nous",
   "contact": "Contactez-nous",
   "products": "Produits",
+
+  "homeNav": "Accueil",
+  "about-usNav": "À propos",
+  "contact-usNav": "Contactez-nous",
+  "btnNav": "Contactez-nous",
+  "productsNav": "Produits",
+
+  "aboutushomeh2": "À propos de nous",
+  "aboutushomeh1": "Hamac Events",
+  "copyright": "Copyright © 2024 Hamac Events. Tous droits réservés.",
+  "footerAbout": "Hamac Events est votre partenaire de choix pour des solutions industrielles de haute qualité. Spécialisés dans l’importation et la distribution de marques mondiales, nous nous concentrons sur la fixation et l’outillage professionnel, ainsi que sur le matériel de detailing automobile.",
+
   "footer": {
     "top-footer": {
       "description": "En édition et design graphique, Lorem ipsum est un texte de substitution couramment utilisé pour",
@@ -39,28 +31,56 @@
         }
       }
     },
-
     "copyright": "© 2024 Hamac-Events. Tous droits réservés"
   },
 
   "title": "Vous avez encore des questions ?",
   "description": "Vous ne trouvez pas la réponse que vous cherchez ? Contactez-nous !",
+
   "name": "Nom",
   "first-name": "Prénom",
   "email": "E-mail",
   "phone": "Numéro de téléphone",
   "describ": "description",
   "send": "Envoyer",
-  "qst1": "Toutes les options du Plan Basique",
-  "rep1": "un système de réservation en ligne sécurisé, et un tableau de bord intuitif pour gérer vos réservations. Personnalisez votre profil avec des photos et descriptions, et recevez des notifications par e-mail pour chaque nouvelle réservation",
-  "qst2": "Visibilité sur les réseaux sociaux",
-  "rep2": "Bénéficiez d'une promotion sur nos comptes de réseaux sociaux pour augmenter votre visibilité et atteindre un public plus large. Profitez de notre présence en ligne pour attirer plus de clients potentiels.",
-  "qst3": "Système de réservation avancé",
-  "rep3": "Accédez à des fonctionnalités de réservation supplémentaires, telles que la personnalisation des options de réservation et la gestion des paiements. Offrez une expérience de réservation fluide et professionnelle à vos clients.",
-  "qst4": "Tableau de bord amélioré",
-  "rep4": "Utilisez des outils de gestion avancés pour une analyse plus approfondie de vos performances. Obtenez des rapports détaillés, suivez les tendances de réservation et optimisez vos opérations quotidiennes.",
-  "qst5": "Support client standard",
-  "rep5": "Bénéficiez d'une assistance par e-mail et téléphone pour résoudre rapidement vos problèmes et répondre à vos questions. Notre équipe est là pour vous aider à tirer le meilleur parti de nos outils.",
+
+  "testing": "testing",
+
+  "titleabout": "Qui sommes-nous ?",
+  "subtitle1": "D'une vision à la réalité",
+  "description1": "Hamac Events vous libère de tous les soucis liés à l’organisation de vos événements. Experts en conception et réalisation sur mesure, nous créons des expériences uniques qui reflètent votre vision, et ce, partout en Algérie. Grâce à une équipe talentueuse et engagée, nous transformons vos idées en moments mémorables et impactants.",
+  "subtitle2": "Engagement",
+  "description2": "Nous travaillons main dans la main avec des entreprises, des organisations et des particuliers pour proposer des solutions adaptées. Que ce soit pour un événement d’entreprise, un team building, une foire ou un salon professionnel, notre mission est de vous accompagner avec créativité, rigueur et professionnalisme",
+
+  "title2": "Nos valeurs :",
+  "title3+": "Innovation : ",
+  "subtitle3": "Imaginer des concepts originaux pour répondre à vos besoins spécifiques.",
+  "title4+": "Excellence : ",
+  "subtitle4": "Porter une attention méticuleuse aux détails pour un rendu impeccable.",
+  "title5+": "Collaboration : ",
+  "subtitle5": "Construire vos projets autour de votre vision et de vos attentes.",
+  "title6+": "Durabilité : ",
+  "subtitle6": "Proposer des options écoresponsables pour des événements respectueux de l’environnement.",
+  "subtitle7": "Avec Hamac Events, chaque projet devient une opportunité de marquer les esprits et de faire la différence.",
+
+  "readyToUse": "Services personnalisés",
+  "satisfaction": "Satisfaction client",
+  "contactButton": "Contactez-nous",
+  "bookButton": "Réserver un appel",
+
+  "titleTb": "C'est quoi le Team Building ? ",
+  "description1Tb": "Le succès d'une entreprise repose sur des équipes soudées et performantes. Le team building est une opportunité unique de renforcer les liens, d'améliorer la communication et de créer un environnement de travail positif. Chez Hamac Events, nous concevons des expériences sur mesure dans des cadres exceptionnels, combinant défis stimulants et moments de détente. Découvrez nos destinations exclusives et offrez à votre équipe une expérience qui allie plaisir et développement professionnel.",
+  "description2Tb": "Le team building est au cœur de notre approche pour renforcer la cohésion et l’engagement des équipes. En offrant des expériences uniques et personnalisées, Hamac Events transforme vos moments de collaboration en opportunités de croissance collective.",
+  "qst1": "Quels types d'événements organisez-vous ?",
+  "rep1": "Nous organisons une large gamme d'événements, y compris des team buildings, des séminaires, des conférences, des salons professionnels, des événements d'entreprise et des événements privés.",
+  "qst2": "Proposez-vous des services personnalisés ?",
+  "rep2": "Oui, chaque événement est conçu sur mesure en fonction des besoins et des attentes de nos clients, afin de garantir une expérience unique et adaptée.",
+  "qst3": "Quels sont vos délais pour organiser un événement ?",
+  "rep3": "Les délais varient en fonction de la complexité et de l’ampleur de l’événement. Nous recommandons de nous contacter le plus tôt possible pour garantir une préparation optimale.",
+  "qst4": "Travaillez-vous uniquement en Algérie ?",
+  "rep4": "Bien que notre base soit en Algérie, nous sommes ouverts à collaborer sur des projets internationaux, en fonction des besoins de nos clients.",
+  "qst5": "Proposez-vous des solutions écoresponsables ?",
+  "rep5": "Absolument ! Nous nous engageons à intégrer des pratiques durables dans nos services, notamment en utilisant des matériaux recyclables et en minimisant l'empreinte carbone de nos événements.",
   "qst-title": "Questions fréquemment posées",
   "qst-desc": "Question you might ask about our products and services.",
   "tool": {
@@ -72,33 +92,9 @@
     "description_3": "Un partenaire stratégique pour vos besoins professionnels."
   },
   "button": {
-    "learn_more": "En savoir plus"
+    "learn_more": "En savoir plus",
+    "explore": "Découvrez nos réalisations",
+    "explore_exp": "Découvrez notre expertise"
   },
-  "titleabout": "Qui sommes-nous ?",
-  "subtitle1": "D'une vision à la réalité",
-  "description1": "Hamac Events vous libère de tous les soucis liés à l’organisation de vos événements. Experts en conception et réalisation sur mesure, nous créons des expériences uniques qui reflètent votre vision, et ce, partout en Algérie. Grâce à une équipe talentueuse et engagée, nous transformons vos idées en moments mémorables et impactants.",
-  "subtitle2": "Engagement",
-  "description2": "Nous travaillons main dans la main avec des entreprises, des organisations et des particuliers pour proposer des solutions adaptées. Que ce soit pour un événement d’entreprise, un team building, une foire ou un salon professionnel, notre mission est de vous accompagner avec créativité, rigueur et professionnalisme",
-  "title2": "Nos valeurs :",
-  "title3+": "Innovation : ",
-  "subtitle3": " Imaginer des concepts originaux pour répondre à vos besoins spécifiques.",
-
-  "title4+": "Excellence : ",
-  "subtitle4": "Porter une attention méticuleuse aux détails pour un rendu impeccable.",
-
-  "title5+": "Collaboration : ",
-  "subtitle5": "Construire vos projets autour de votre vision et de vos attentes.",
-
-  "title6+": "Durabilité : ",
-  "subtitle6": "Proposer des options écoresponsables pour des événements respectueux de l’environnement.",
-  "subtitle7": "Avec Hamac Events, chaque projet devient une opportunité de marquer les esprits et de faire la différence.",
-
-  "readyToUse": "Services personnalisés",
-  "satisfaction": "Satisfaction client",
-  "contactButton": "Contactez-nous",
-  "bookButton": "Réserver un appel",
-
-  "titleTb": "C'est quoi le Team Building ? ",
-  "description1Tb": "Le succès d'une entreprise repose sur des équipes soudées et performantes. Le team building est une opportunité unique de renforcer les liens, d'améliorer la communication et de créer un environnement de travail positif. Chez Hamac Events, nous concevons des expériences sur mesure dans des cadres exceptionnels, combinant défis stimulants et moments de détente. Découvrez nos destinations exclusives et offrez à votre équipe une expérience qui allie plaisir et développement professionnel.",
-  "description2Tb": "Le team building est au cœur de notre approche pour renforcer la cohésion et l’engagement des équipes. En offrant des expériences uniques et personnalisées, Hamac Events transforme vos moments de collaboration en opportunités de croissance collective."
+  "sortiesPropose": "Sorties Proposées :"
 }

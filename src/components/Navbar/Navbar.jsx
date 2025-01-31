@@ -102,9 +102,7 @@ export default function Navbar() {
               height={24}
             />
           </div>
-          <div className="menu" onClick={() => setIsOpen(!isOpen)}>
-            <RiMenu3Fill color="white" size={23} />
-          </div>
+
           <div
             ref={languageMenuRef} // Attach the ref here
             className={
@@ -131,6 +129,11 @@ export default function Navbar() {
                 <span> français</span>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className="menu-bar">
+          <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+            <RiMenu3Fill color="white" size={46} />
           </div>
         </div>
       </nav>

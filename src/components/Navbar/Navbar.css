@@ -129,10 +129,10 @@
   height: 56px;
   width: 56px;
 }
+.menu-bar {
+  display: none;
+}
 @media (max-width: 600px) {
-  .navbarfirst {
-    display: none;
-  }
   .navbarlast {
     flex-direction: row-reverse;
     padding: 20px 0px;
@@ -187,4 +187,17 @@
   gap: 9px;
   align-items: center;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .language,
+  .navbarmiddle {
+    display: none;
+  }
+  .menu-bar {
+    display: block;
+  }
+  .navbar .main-logo {
+    height: 6.6vh;
+  }
 }

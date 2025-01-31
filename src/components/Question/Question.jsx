@@ -26,15 +26,15 @@ const Question = () => {
     },
     {
       qst: "qst4",
-      reponse: "rep5",
+      reponse: "rep4",
     },
     {
       qst: "qst5",
-      reponse: "qst5",
+      reponse: "rep5",
     },
   ];
   return (
-    <div className="left" >
+    <div className="left">
       <h1>{t("qst-title")}</h1>
       <p>{t("qst-desc")}</p>
       <div className="question-content">

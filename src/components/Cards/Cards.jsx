@@ -45,8 +45,8 @@ export default function Cards() {
 
           <div
             onClick={() => {
-              navigate(`${product.navigate}`);
               window.scrollTo(0, 0);
+              navigate(`${product.navigate}`);
             }}
             className="cardscard"
             style={{ backgroundImage: `url(${product.image})` }}

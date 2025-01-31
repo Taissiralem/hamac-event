@@ -1,0 +1,15 @@
+.stands-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.list {
+  columns: 300px;
+}
+.list img {
+  width: 100%;
+  margin-bottom: 20px;
+  max-height: 380px;
+}

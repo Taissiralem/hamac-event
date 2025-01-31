@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./Sorties-add.css";
 import { Helmet } from "react-helmet";
 import Sortiess from "../../../components/Sortie/Sorties";

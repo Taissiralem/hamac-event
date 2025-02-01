@@ -74,10 +74,7 @@ export default function Stands() {
         style={{ marginTop: "50px", marginBottom: "50px" }}
       />
 
-      <div
-        className="right"
-        style={{ marginBottom: "50px", marginLeft: "45px" }}
-      >
+      <div className="right" id="right-stands" style={{ marginBottom: "50px" }}>
         <h2>{t("title-tb")}</h2>
         <p>{t("description-tb")}</p>
         <ContactForm motif={"Landing page"} />

@@ -13,3 +13,20 @@
   margin-bottom: 20px;
   max-height: 380px;
 }
+#right-stands {
+  margin-left: 25px;
+}
+@media screen and (max-width: 600px) {
+  .list {
+    columns: 180px;
+  }
+  #right-stands {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  #right-stands {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

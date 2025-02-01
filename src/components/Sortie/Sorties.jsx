@@ -9,12 +9,6 @@ const CardComponent = ({ href }) => {
   const [sorties, setSorties] = useState([]);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    getSorties().then((data) => {
-      setSorties(data.data.sorties);
-    });
-  }, []);
-
   const userRole = useSelector((state) => state.auth?.user?.role);
   console.log(userRole);
   const admin = userRole === "admin";
@@ -22,6 +16,11 @@ const CardComponent = ({ href }) => {
   const handleCardClick = (id) => {
     dispatch(chooseSortie(id));
   };
+  useEffect(() => {
+    getSorties().then((data) => {
+      setSorties(data.data.sorties);
+    });
+  }, []);
 
   return (
     <div className="cards-container">

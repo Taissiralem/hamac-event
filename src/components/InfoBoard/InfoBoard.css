@@ -1,0 +1,132 @@
+.board {
+  width: 100%;
+  height: auto;
+  background-color: whitesmoke;
+  padding: 70px 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+}
+.board h2 {
+  font-family: "Proxima Nova", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  width: 79%;
+}
+.grid-board {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  justify-content: center;
+  border: 1px solid #c7cfd7;
+  border-radius: 20px;
+}
+.borad-box {
+  outline: 1px solid #c7cfd7; /* Color of the border */
+  background-color: whitesmoke;
+  padding: 40px 30px;
+  width: 400px;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.borad-box h2 {
+  font-size: 18px;
+}
+.borad-box span {
+  width: 100%;
+}
+.borad-box p {
+  font-size: 14px;
+  color: rgb(78, 88, 96);
+  min-height: 120px;
+}
+
+.borad-box:hover {
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.borad-box button {
+  background-color: black;
+  padding: 15px 25px;
+  color: whitesmoke;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  width: 70%;
+  cursor: pointer;
+}
+.borad-box span:last-child {
+  /* visibility: hidden; */
+
+  margin-top: 30px;
+  transition: 1s;
+}
+/* .borad-box:hover span:last-child {
+  opacity: 1;
+  visibility: visible;
+  height: 100px;
+} */
+.borad-box hr {
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #625df5;
+  transition: 0.4s;
+}
+.borad-box:hover hr {
+  width: 80%;
+}
+@media screen and (max-width: 1240px) {
+  .grid-board {
+    grid-template-columns: auto auto;
+  }
+  .title-board h2 {
+    text-align: center;
+  }
+  .title-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .board {
+    padding: 70px 10px;
+  }
+  .title-board {
+    width: 100%;
+  }
+  .title-board h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .grid-board {
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 450px) {
+  .borad-box {
+    width: unset;
+  }
+}
+@media screen and (max-width: 590px) {
+  .board {
+    padding: 70px 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 414px) {
+}
+@media screen and (max-width: 385px) {
+}
+@media screen and (max-width: 250px) {
+}

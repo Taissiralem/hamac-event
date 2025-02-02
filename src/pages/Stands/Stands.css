@@ -6,7 +6,7 @@
   height: 100vh;
 }
 .list {
-  columns: 3;
+  columns: 4;
 }
 .list img {
   width: 100%;

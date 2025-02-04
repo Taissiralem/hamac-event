@@ -17,7 +17,7 @@
   position: relative;
   overflow: hidden;
   padding: 25px;
-  filter: blur(1px) brightness(0.55);
+  filter: blur(0.3px) brightness(0.55);
 }
 
 .cardscard h1 {

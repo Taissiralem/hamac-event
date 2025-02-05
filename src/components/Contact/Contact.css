@@ -241,7 +241,6 @@
   .left > h1,
   .right h2 {
     font-size: 20px;
-    text-align: center;
   }
   .right form {
     margin-top: 10px;
@@ -251,6 +250,9 @@
   }
 }
 @media screen and (max-width: 590px) {
+  .board h2 {
+    font-size: 20px !important;
+  }
 }
 @media screen and (max-width: 480px) {
 }

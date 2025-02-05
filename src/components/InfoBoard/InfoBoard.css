@@ -87,14 +87,6 @@
   .grid-board {
     grid-template-columns: auto auto;
   }
-  .title-board h2 {
-    text-align: center;
-  }
-  .title-board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 @media screen and (max-width: 1070px) {
   .board {
@@ -102,6 +94,7 @@
   }
   .title-board {
     width: 100%;
+    padding: 12px;
   }
   .title-board h2 {
     font-size: 32px;

@@ -67,7 +67,7 @@ export default function Navbar() {
             href="#aboutus"
             onClick={(e) => {
               e.preventDefault(); // Prevent default anchor behavior
-              handleNavigationToSection("#aboutus");
+              handleNavigationToSection("#about-section");
             }}
           >
             {t("about-usNav")}
@@ -81,7 +81,15 @@ export default function Navbar() {
           >
             Services
           </a>
-          <NavLink to={"/contact"}>{t("contact-usNav")}</NavLink>
+          <a
+            href="contact-page"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default anchor behavior
+              handleNavigationToSection(".contact-page");
+            }}
+          >
+            {t("contact-usNav")}
+          </a>
 
           {isauth && <NavLink to={"/admin/home"}>Dashboard</NavLink>}
         </div>

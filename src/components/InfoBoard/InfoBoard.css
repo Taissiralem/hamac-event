@@ -51,7 +51,7 @@
   z-index: 2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-.borad-box button {
+.borad-box a {
   background-color: black;
   padding: 15px 25px;
   color: whitesmoke;
@@ -129,4 +129,12 @@
 @media screen and (max-width: 385px) {
 }
 @media screen and (max-width: 250px) {
+}
+
+.teambuildingHR {
+  border-radius: 10px;
+}
+
+.infoHr {
+  width: 60vw;
 }

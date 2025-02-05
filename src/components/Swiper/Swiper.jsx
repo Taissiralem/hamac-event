@@ -7,8 +7,8 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, EffectFlip } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import pic1 from "../../assets/slider/pic1.jpg";
-import pic2 from "../../assets/slider/pic2.webp";
-import pic3 from "../../assets/slider/pic3.webp";
+import pic2 from "../../assets/slider/pic2.avif";
+import pic3 from "../../assets/slider/pic3.jpg";
 import { useTranslation } from "react-i18next";
 
 const swiperItems = [

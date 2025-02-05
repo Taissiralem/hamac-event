@@ -1,7 +1,7 @@
 import "./Cards.css";
 import Team from "../../assets/slider/pic1.jpg";
-import Global from "../../assets/slider/pic2.webp";
-import Custom from "../../assets/slider/pic3.webp";
+import Custom from "../../assets/slider/pic2.avif";
+import Global from "../../assets/slider/pic3.jpg";
 
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next"; // Importer le hook

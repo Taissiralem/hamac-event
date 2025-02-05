@@ -31,9 +31,7 @@ export default function TeamBuilding() {
 
         <Sorties href={"#contact-tb"}></Sorties>
       </div>
-      {/* <div className="reserve-button-wrapper">
-        <button className="reserve-button">JE RÉSERVE</button>
-      </div> */}
+
       <hr className="teambuildingHR" id="contact-tb" />
       <div className="right rightTB">
         <h2>Réserver votre Sortie dès maintenant!</h2>

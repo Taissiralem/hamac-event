@@ -15,10 +15,11 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const isauth = useSelector((state) => state.auth?.isLoggedIn);
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLanguage, setIsLanguage] = useState(false);
   const language = i18n.language;
-  const languageMenuRef = useRef(null); // Ref for the language menu
+  const languageMenuRef = useRef(null);
+  const sidebarMenuRef = useRef(null);
 
   const handleNavigationToSection = (sectionId) => {
     navigate("/"); // Navigate to the landing page
@@ -41,68 +42,170 @@ export default function Navbar() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarMenuRef.current &&
+        !sidebarMenuRef.current.contains(event.target)
+      ) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbarfirst">
-          <Link to={"/"}>
-            <img
-              src={logo1}
-              alt="Logo"
-              className="main-logo"
-              onClick={() => navigate("/")}
-            />
-          </Link>
-        </div>
+    <nav className="navbar">
+      <div className="navbarfirst">
+        <Link to="/">
+          <img
+            src={logo1}
+            alt="Logo"
+            className="main-logo"
+            onClick={() => navigate("/")}
+          />
+        </Link>
+      </div>
 
-        <div className="navbarmiddle">
-          <NavLink to={"/"}>{t("homeNav")}</NavLink>
-          <a
-            href="#aboutus"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default anchor behavior
-              handleNavigationToSection("#about-section");
-            }}
-          >
-            {t("about-usNav")}
-          </a>
-          <a
-            href="#services"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default anchor behavior
-              handleNavigationToSection("#services");
-            }}
-          >
-            Services
-          </a>
-          <a
-            href="contact-page"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default anchor behavior
-              handleNavigationToSection(".contact-page");
-            }}
-          >
-            {t("contact-usNav")}
-          </a>
+      <div className="navbarmiddle">
+        <NavLink to={"/"} onClick={() => window.scrollTo(0, 0)}>
+          {t("homeNav")}
+        </NavLink>
+        <a
+          href="#aboutus"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection("#about-section");
+          }}
+        >
+          {t("about-usNav")}
+        </a>
+        <a
+          href="#services"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection("#services");
+          }}
+        >
+          Services
+        </a>
+        <a
+          href="contact-page"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection(".contact-page");
+          }}
+        >
+          {t("contact-usNav")}
+        </a>
 
-          {isauth && <NavLink to={"/admin/home"}>Dashboard</NavLink>}
-        </div>
+        {isauth && <NavLink to={"/admin/home"}>Dashboard</NavLink>}
+      </div>
 
-        <div className="language">
-          <div
-            className="language"
+      <div className="language" onClick={() => setIsLanguage(!isLanguage)}>
+        <span>{language}</span>
+        <img
+          src={language === "en" ? en : fr}
+          alt="Flag"
+          width={24}
+          height={24}
+        />
+      </div>
+
+      <div
+        ref={languageMenuRef}
+        className={
+          isLanguage
+            ? "language-menu active-language webactive"
+            : "language-menu"
+        }
+      >
+        <ul>
+          <li
             onClick={() => {
-              setIsLanguage(!isLanguage);
+              changeLanguage("en");
+              setIsLanguage(false);
             }}
-            style={{ cursor: "pointer" }}
           >
-            <span>{language}</span>
+            <img src={en} alt="English Flag" width={24} height={24} />
+            <span> English</span>
+          </li>
+          <li
+            onClick={() => {
+              changeLanguage("fr");
+              setIsLanguage(false);
+            }}
+          >
+            <img src={fr} alt="French Flag" width={24} height={24} />
+            <span> français</span>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        className={`mobile-sidebar ${isSidebarOpen ? "active" : ""}`}
+        ref={sidebarMenuRef}
+      >
+        <button className="close-btn" onClick={() => setIsSidebarOpen(false)}>
+          ✖
+        </button>
+        <NavLink
+          to={"/"}
+          onClick={() => {
+            setIsSidebarOpen(false);
+            window.scrollTo(0, 0);
+          }}
+        >
+          {t("homeNav")}
+        </NavLink>
+        <a
+          href="#aboutus"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection("#about-section");
+            setIsSidebarOpen(false);
+          }}
+        >
+          {t("about-usNav")}
+        </a>
+        <a
+          href="#services"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection("#services");
+            setIsSidebarOpen(false);
+          }}
+        >
+          Services
+        </a>
+        <a
+          href="contact-page"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            handleNavigationToSection(".contact-page");
+            setIsSidebarOpen(false);
+          }}
+        >
+          {t("contact-usNav")}
+        </a>
+
+        {/* Language Selector inside Sidebar */}
+        <div className="language-mobile-container">
+          <div
+            className="language-mobile"
+            onClick={() => setIsLanguage(!isLanguage)}
+            ref={languageMenuRef}
+          >
+            Language :<span>{language}</span>
             <img
               src={language === "en" ? en : fr}
               alt="Flag"
@@ -110,11 +213,12 @@ export default function Navbar() {
               height={24}
             />
           </div>
-
           <div
-            ref={languageMenuRef} // Attach the ref here
+            ref={languageMenuRef}
             className={
-              isLanguage ? "language-menu active-language" : "language-menu"
+              isLanguage
+                ? "language-menu active-language mobileview "
+                : "language-menu mobileview"
             }
           >
             <ul>
@@ -139,12 +243,13 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-        <div className="menu-bar">
-          <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
-            <RiMenu3Fill color="white" size={46} />
-          </div>
+      </div>
+
+      <div className="menu-bar">
+        <div className="menu-icon" onClick={() => setIsSidebarOpen(true)}>
+          <RiMenu3Fill color="white" size={46} />
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }

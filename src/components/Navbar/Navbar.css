@@ -200,4 +200,111 @@
   .navbar .main-logo {
     height: 6.6vh;
   }
+  .webactive {
+    display: none;
+  }
+  .mobileview {
+    border: 1px solid #e7e7e7;
+    color: black;
+    bottom: -100px;
+    right: 30%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .mobileview {
+    display: none;
+  }
+}
+
+/* Sidebar Styles */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Hidden initially */
+  width: 75vw;
+  height: 100vh;
+  background-color: white;
+  color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobile-sidebar.active {
+  left: 0; /* Slide in */
+}
+
+.mobile-sidebar .close-btn {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: black;
+}
+
+.mobile-sidebar a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.mobile-sidebar a:hover {
+  padding-left: 10px;
+  transition: 0.3s;
+}
+
+.mobile-sidebar .language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-sidebar .language-toggle img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.language-mobile-container {
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .navbar > .language {
+    /* Hides only the language selector in the main navbar */
+    display: none;
+  }
+
+  .language-mobile {
+    display: flex !important; /* Force it to show inside the sidebar */
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    color: black;
+    font-size: large;
+    /* font-weight: bold; */
+    justify-content: center;
+  }
+
+  .language-mobile .language-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    z-index: 5;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .language-mobile .language-menu.active-language {
+    clip-path: inset(0 0 0 0);
+  }
 }

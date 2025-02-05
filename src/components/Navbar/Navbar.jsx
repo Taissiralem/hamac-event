@@ -111,7 +111,11 @@ export default function Navbar() {
         {isauth && <NavLink to={"/admin/home"}>Dashboard</NavLink>}
       </div>
 
-      <div className="language" onClick={() => setIsLanguage(!isLanguage)}>
+      <div
+        className="language"
+        onClick={() => setIsLanguage(!isLanguage)}
+        ref={languageMenuRef}
+      >
         <span>{language}</span>
         <img
           src={language === "en" ? en : fr}

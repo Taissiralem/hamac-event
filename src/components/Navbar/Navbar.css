@@ -78,11 +78,12 @@
   gap: 10px;
   position: relative;
   width: 190px;
+  cursor: pointer;
 }
 .language-menu {
   position: absolute;
-  bottom: -113px;
-  right: 0;
+  bottom: -80px;
+  right: 89px;
   clip-path: inset(0 0 100% 0);
   background-color: white;
   z-index: 2;

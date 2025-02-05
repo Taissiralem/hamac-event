@@ -89,7 +89,7 @@
 }
 .cards-container p {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
@@ -108,4 +108,41 @@
     gap: 10%;
     justify-content: center;
   }
+}
+
+.card-description {
+  max-height: 3.6em; /* Limits to 3 lines */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.card-description.expanded {
+  max-height: none; /* Show full text when expanded */
+}
+
+.see-more-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline;
+}
+
+.card-description {
+  display: inline;
+}
+
+.see-more-btn {
+  display: inline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: inherit;
 }

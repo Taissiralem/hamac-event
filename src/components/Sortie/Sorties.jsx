@@ -1,16 +1,16 @@
-import "./Sorties.css";
+import { useState, useEffect } from "react";
 import { getSorties } from "../../services/addSortieServices";
-import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { chooseSortie } from "../../redux/slices/chosenSortieSlice";
+import "./Sorties.css";
 
 const CardComponent = ({ href }) => {
   const [sorties, setSorties] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
+  const [expanded, setExpanded] = useState({});
   const dispatch = useDispatch();
 
   const userRole = useSelector((state) => state.auth?.user?.role);
-  console.log(userRole);
   const admin = userRole === "admin";
 
   const handleCardClick = (id) => {
@@ -18,7 +18,7 @@ const CardComponent = ({ href }) => {
   };
 
   useEffect(() => {
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     getSorties()
       .then((data) => {
         setSorties(data.data.sorties);
@@ -27,44 +27,80 @@ const CardComponent = ({ href }) => {
         console.error("Error fetching sorties:", error);
       })
       .finally(() => {
-        setIsLoading(false); // Stop loading
+        setIsLoading(false);
       });
   }, []);
+
+  const toggleExpand = (index) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   return (
     <div className="cards-container">
       {isLoading ? (
-        <p>Chargement des sorties propsées...</p>
+        <p>Chargement des sorties proposées...</p>
       ) : sorties.length === 0 ? (
         <p>
           Aucune sortie proposée pour le moment, veuillez contacter
           l'administrateur
         </p>
       ) : (
-        sorties.map((card, index) => (
-          <div
-            className="card"
-            key={index}
-            onClick={() => handleCardClick(card.titleFr)}
-          >
-            <a className="cards-unset" href={href}>
-              <div className="card-image-wrapper">
-                <img
-                  src={card.images[0]}
-                  alt={card.titleFr}
-                  className="card-image"
-                  loading="lazy" // Lazy-load images
-                />
-                <span className="card-badge">{card.localisation}</span>
-              </div>
-              <div className="card-content">
-                <h3 className="card-title">{card.titleFr}</h3>
-                <p className="card-date">{card.days}</p>
-                <p className="card-description">{card.descFr}</p>
-              </div>
-            </a>
-          </div>
-        ))
+        sorties.map((card, index) => {
+          const isExpanded = expanded[index];
+          const shortDesc =
+            card.descFr.length > 120
+              ? card.descFr.slice(0, 120) + "..."
+              : card.descFr;
+
+          return (
+            <div
+              className="card"
+              key={index}
+              onClick={() => handleCardClick(card.titleFr)}
+            >
+              <a className="cards-unset" href={href}>
+                <div className="card-image-wrapper">
+                  <img
+                    src={card.images[0]}
+                    alt={card.titleFr}
+                    className="card-image"
+                    loading="lazy"
+                  />
+                  <span className="card-badge">{card.localisation}</span>
+                </div>
+                <div className="card-content">
+                  <h3 className="card-title">{card.titleFr}</h3>
+                  <h2 className="card-date">{card.days}</h2>
+
+                  {/* Description Section */}
+                  <p
+                    className={`card-description ${
+                      isExpanded ? "expanded" : ""
+                    }`}
+                  >
+                    {isExpanded ? card.descFr : shortDesc}
+                  </p>
+
+                  {/* See More Button */}
+                  {card.descFr.length > 120 && (
+                    <button
+                      className="see-more-btn"
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevents navigation
+                        toggleExpand(index);
+                      }}
+                    >
+                      {isExpanded ? "Voir moins" : "Voir plus"}
+                    </button>
+                  )}
+                </div>
+              </a>
+            </div>
+          );
+        })
       )}
     </div>
   );

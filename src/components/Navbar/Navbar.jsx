@@ -13,7 +13,6 @@ import { useSelector } from "react-redux";
 export default function Navbar() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
   const isauth = useSelector((state) => state.auth?.isLoggedIn);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLanguage, setIsLanguage] = useState(false);
@@ -250,7 +249,10 @@ export default function Navbar() {
       </div>
 
       <div className="menu-bar">
-        <div className="menu-icon" onClick={() => setIsSidebarOpen(true)}>
+        <div
+          className="menu-icon"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
           <RiMenu3Fill color="white" size={46} />
         </div>
       </div>

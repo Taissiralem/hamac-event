@@ -19,6 +19,7 @@ import Stands from "./pages/Stands/Stands.jsx";
 import SortiesAdmin from "./pages/Admin/Sorties-add/Sorties-add.jsx";
 import SortiesAddForm from "./pages/Admin/Sorties-add-form/Sorties-add-form.jsx";
 import Contact from "./pages/Admin/Contact/Contact.jsx";
+import Newsletter from "./pages/Admin/Newsletter/Newsletter.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "newsletter",
+        element: <Newsletter />,
       },
     ],
   },

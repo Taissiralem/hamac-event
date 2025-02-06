@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import logo1 from "../../assets/logo/logo1.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { createNewsletter } from "../../services/newsletter";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -23,13 +24,14 @@ export default function Footer() {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    // createNewsletter({ email });
+    createNewsletter({ email });
     Swal.fire({
       position: "top-end",
       icon: "success",
-      title: "Your Email has been saved",
+      title: `Your Email has been saved ${email}`,
+
       showConfirmButton: false,
-      timer: 1500,
+      timer: 3500,
     });
     setEmail("");
   };

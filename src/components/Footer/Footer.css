@@ -85,12 +85,12 @@
 #newsletter-button {
   position: absolute;
   bottom: 5px;
-  z-index: 9;
+  z-index: 3;
 }
 .left-footer .newsletter-form {
   display: flex;
   height: 70px;
-  margin-top: 70px; /* Same as the button margin-top */
+  margin-top: 25px; /* Same as the button margin-top */
   width: 100%; /* Ensure it takes the same width */
   position: relative;
 }
@@ -179,13 +179,13 @@
     width: 100%;
   }
   .footer {
-    height: 700px;
+    height: 640px;
     padding: 50px 50px 70px 50px;
   }
 
   .top-footer {
     gap: 50px;
-    height: 443px;
+    height: 413px;
     justify-content: space-between;
     position: relative;
   }
@@ -240,6 +240,6 @@
     transform: translateX(-50%);
   }
   #newsletter-button {
-    bottom: -95px !important;
+    bottom: -85px !important;
   }
 }

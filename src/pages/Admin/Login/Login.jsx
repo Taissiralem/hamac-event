@@ -24,7 +24,6 @@ const Login = () => {
 
     try {
       const response = await SignInUser({ email, password });
-      console.log("Login successful:", response.data);
 
       // Store the token in localStorage
       localStorage.setItem("token", response.data.token);

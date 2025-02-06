@@ -2,7 +2,6 @@ import { IoHome } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./SideBar.css";
 import { LuNewspaper } from "react-icons/lu";
-import { IoMdStats } from "react-icons/io";
 import Logo from "../../assets/logo/logo1.png";
 import { SlLogout } from "react-icons/sl";
 import { useDispatch } from "react-redux"; // Import useDispatch
@@ -15,7 +14,6 @@ const SideBar = () => {
 
   const infos = [
     { icon: <IoHome />, text: "Home", link: "/admin/home" },
-    { icon: <IoMdStats />, text: "Stat", link: "/admin/stat" },
     { icon: <LuNewspaper />, text: "Newsletter", link: "newsletter" },
     { icon: <RiTeamFill />, text: "Team Building", link: "tb-sorties" },
     { icon: <RiTeamFill />, text: "Contact messages", link: "contact" },

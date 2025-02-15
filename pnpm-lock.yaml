@@ -26,6 +26,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.3.0
         version: 2.3.0(react-redux@9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      arrayify:
+        specifier: ^1.0.0
+        version: 1.0.0
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -1034,6 +1037,9 @@ packages:
   arraybuffer.prototype.slice@1.0.3:
     resolution: {integrity: sha512-bMxMKAjg13EBSVscxTaYA4mRc5t1UAXa2kXiGTNfZ079HIWXEkKmkgFrh/nJqamaLSrXO5H4WFFkPEaLJWbs3A==}
     engines: {node: '>= 0.4'}
+
+  arrayify@1.0.0:
+    resolution: {integrity: sha512-1dR4Eij3ZHfA/Gx5dPECF9valUfbS/aV27clwZ//vVZ5LBSHObksDbGLxl/sRJyC3fxprB+9nkUliyfQVPMBJQ==}
 
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -2989,6 +2995,8 @@ snapshots:
       get-intrinsic: 1.2.4
       is-array-buffer: 3.0.4
       is-shared-array-buffer: 1.0.3
+
+  arrayify@1.0.0: {}
 
   asynckit@0.4.0: {}
 

@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next"; // Importer le hook
 
 export default function Cards() {
   const { i18n } = useTranslation(); // Utiliser useTranslation pour obtenir l'instance i18n
-  const navigate = useNavigate();
+ 
 
   const products = [
     {
@@ -43,14 +43,11 @@ export default function Cards() {
         <div className="overlaycards">
           <div className="h1">{title}</div>
 
-          <div
-            onClick={() => {
-              window.scrollTo(0, 0);
-              navigate(`${product.navigate}`);
-            }}
+          <a
+            href={product.navigate}
             className="cardscard"
             style={{ backgroundImage: `url(${product.image})` }}
-          ></div>
+          ></a>
         </div>
       </div>
     );

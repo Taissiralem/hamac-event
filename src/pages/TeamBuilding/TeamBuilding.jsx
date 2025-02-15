@@ -2,7 +2,7 @@ import "./TeamBuilding.css";
 import Sorties from "../../components/Sortie/Sorties";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import { useTranslation } from "react-i18next";
-import City from "../../assets/Rectangle1.webp";
+import City from "../../assets/team3.jpg";
 import { useSelector } from "react-redux";
 
 export default function TeamBuilding() {

@@ -1,17 +1,45 @@
 import { useState, useEffect } from "react";
-import { getSorties } from "../../services/addSortieServices";
+import { deleteSortie, getSorties } from "../../services/addSortieServices";
 import { useSelector, useDispatch } from "react-redux";
 import { chooseSortie } from "../../redux/slices/chosenSortieSlice";
 import "./Sorties.css";
+import { FaRegEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { MdDeleteForever } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const CardComponent = ({ href }) => {
+  const navigate = useNavigate();
   const [sorties, setSorties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [expanded, setExpanded] = useState({});
   const dispatch = useDispatch();
 
+  const HandleDelete = (id) => {
+    Swal.fire({
+      title: "Êtes-vous sûr de vouloir supprimer cette sortie ?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Oui, supprimer !",
+      cancelButtonText: "Annuler",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteSortie(id);
+        Swal.fire(
+          "Suppression réussie !",
+          "La sortie a été supprimée.",
+          "success"
+        );
+        window.location.reload();
+      }
+    });
+  };
+
   const userRole = useSelector((state) => state.auth?.user?.role);
   const admin = userRole === "admin";
+  console.log(admin);
 
   const handleCardClick = (id) => {
     dispatch(chooseSortie(id));
@@ -70,6 +98,28 @@ const CardComponent = ({ href }) => {
                     loading="lazy"
                   />
                   <span className="card-badge">{card.localisation}</span>
+                  {admin && (
+                    <>
+                      <span
+                        className="edit-badge card-badge"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(`edit-sortie/${card._id}`);
+                        }}
+                      >
+                        <FaRegEdit />
+                      </span>
+                      <span
+                        className="edit-badge card-badge delete-badge"
+                        onClick={(e) => {
+                          HandleDelete(card._id);
+                          e.preventDefault();
+                        }}
+                      >
+                        <MdDeleteForever size={20} />
+                      </span>
+                    </>
+                  )}
                 </div>
                 <div className="card-content">
                   <h3 className="card-title">{card.titleFr}</h3>
@@ -80,6 +130,10 @@ const CardComponent = ({ href }) => {
                     className={`card-description ${
                       isExpanded ? "expanded" : ""
                     }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleExpand(index);
+                    }}
                   >
                     {isExpanded ? card.descFr : shortDesc}
                   </p>

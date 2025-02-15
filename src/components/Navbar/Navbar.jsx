@@ -134,8 +134,8 @@ export default function Navbar() {
       >
         <ul>
           <li
-            onClick={() => {
-              changeLanguage("en");
+            onClick={async () => {
+              await changeLanguage("en");
               setIsLanguage(false);
             }}
           >
@@ -143,8 +143,8 @@ export default function Navbar() {
             <span> English</span>
           </li>
           <li
-            onClick={() => {
-              changeLanguage("fr");
+            onClick={async () => {
+              await changeLanguage("fr");
               setIsLanguage(false);
             }}
           >

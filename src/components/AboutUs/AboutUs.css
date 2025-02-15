@@ -1,7 +1,7 @@
 #about-section {
   display: flex;
   gap: 60px;
-  padding: 70px 200px 40px 200px;
+  padding: 20px 130px 40px 130px;
   margin-top: 10px;
   justify-content: space-between;
   flex-direction: column;
@@ -10,7 +10,7 @@
 .fortextabout {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
   width: 50%;
   justify-content: center;
   margin-bottom: 50px;
@@ -31,7 +31,7 @@
 
 .fortextabout p {
   /* width: 75%; */
-  font-size: 22px;
+  font-size: 21px;
   text-align: justify;
 }
 
@@ -103,8 +103,12 @@
   border-radius: 25px;
   object-fit: cover;
 }
+.forimgabout2 img {
+  object-fit: contain;
+}
 .forimgabout {
   width: 50%;
+  max-height: 500px;
 }
 .rtl .fortextabout h1,
 .rtl .fortextabout h3 {
@@ -112,7 +116,14 @@
 }
 @media screen and (max-width: 1440px) {
   #about-section {
-    padding: 20px 150px;
+    padding: 20px 100px;
+  }
+  .forimgabout img {
+    width: 100%;
+    height: 100%;
+  }
+  .forabout {
+    gap: 60px;
   }
 }
 @media screen and (max-width: 1240px) {

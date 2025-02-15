@@ -1,14 +1,24 @@
 "use client";
 import { useEffect, useRef } from "react";
-import City2 from "../../assets/slider/pic1.jpg";
-import City from "../../assets/Rectangle1.webp";
+import City2 from "../../assets/team.jpg";
+import City from "../../assets/team2.jpg";
+import City3 from "../../assets/Rectangle1.webp";
 
 import "./AboutUs.css";
 import { useTranslation } from "react-i18next";
 
 export default function AboutSection() {
   const { t } = useTranslation();
+
   const countersRef = useRef([]);
+  const handleNavigationToSection = (sectionId) => {
+    setTimeout(() => {
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // Delay to ensure the page is fully loaded
+  };
 
   useEffect(() => {
     const counters = countersRef.current;
@@ -54,7 +64,7 @@ export default function AboutSection() {
   return (
     <section id="about-section">
       <div className="forabout">
-        <div className="forimgabout">
+        <div className="forimgabout forimgabout2">
           <img src={City2} alt="Img" />
         </div>
         <div className="fortextabout">
@@ -112,8 +122,12 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="buttonsabout">
-            <button>{t("contactButton")}</button>
-            <button>{t("bookButton")}</button>
+            <button onClick={() => handleNavigationToSection(".contact-page")}>
+              {t("contactButton")}
+            </button>
+            <button onClick={() => handleNavigationToSection(".contact-page")}>
+              {t("bookButton")}
+            </button>
           </div>
         </div>
         <div className="forimgabout">

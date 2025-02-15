@@ -5,6 +5,8 @@ import * as yup from "yup";
 import { addSortie } from "../../../services/addSortieServices";
 import "./Sorties-add-form.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 // Validation schema
 const sortieSchema = yup.object().shape({
@@ -20,6 +22,7 @@ const sortieSchema = yup.object().shape({
 });
 
 const AddSortieForm = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const {
     control,
@@ -56,7 +59,13 @@ const AddSortieForm = () => {
       console.log("Sortie created:", response.data);
       setLoading(false);
       reset();
+      navigate("/admin/tb-sorties");
     } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong",
+      });
       console.error("Failed to create sortie:", error);
       setLoading(false);
     }

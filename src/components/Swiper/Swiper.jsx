@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, EffectFlip } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import pic1 from "../../assets/slider/pic1.jpg";
-import pic2 from "../../assets/slider/pic2.avif";
+import pic2 from "../../assets/slider/pic4.jpg";
 import pic3 from "../../assets/slider/pic3.jpg";
 import { useTranslation } from "react-i18next";
 
@@ -18,7 +18,6 @@ const swiperItems = [
     header1: "tool.header1_1",
     description: "tool.description_1",
     button: "button.learn_more",
-    link: "/products/664e88294cf5a42abd0b5e35",
   },
   {
     id: 2,
@@ -26,7 +25,6 @@ const swiperItems = [
     header1: "tool.header1_2",
     description: "tool.description_2",
     button: "button.explore",
-    link: "/products/664e87fc4cf5a42abd0b5e33",
   },
   {
     id: 3,
@@ -34,8 +32,6 @@ const swiperItems = [
     header1: "tool.header1_3",
     description: "tool.description_3",
     button: "button.explore_exp",
-
-    link: "/products/664e88614cf5a42abd0b5e37",
   },
 ];
 
@@ -44,7 +40,7 @@ export default function App() {
   return (
     <div className="forswiper">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={0}
         slidesPerView={1}
         loop={true}
         effect={"Flip"}

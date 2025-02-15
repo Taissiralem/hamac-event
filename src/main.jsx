@@ -20,7 +20,7 @@ import SortiesAdmin from "./pages/Admin/Sorties-add/Sorties-add.jsx";
 import SortiesAddForm from "./pages/Admin/Sorties-add-form/Sorties-add-form.jsx";
 import Contact from "./pages/Admin/Contact/Contact.jsx";
 import Newsletter from "./pages/Admin/Newsletter/Newsletter.jsx";
-import EditSortie from "./pages/Admin/Edit-Sortie/Edit-Sortie.jsx";
+import EditSortie from "./pages/Admin/EditSortie/EditSortie.jsx";
 // n
 
 const router = createBrowserRouter([

@@ -6,7 +6,7 @@ import {
   getSortieById,
   updateSortie,
 } from "../../../services/addSortieServices";
-import "./Edit-sortie.css";
+import "./EditSortie.css";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";

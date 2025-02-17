@@ -160,19 +160,16 @@
   }
 }
 @media screen and (max-width: 820px) {
+  .forimgabout {
+    display: none;
+  }
 }
 @media screen and (max-width: 650px) {
   #about-section {
     padding: 20px 30px;
     gap: 0px;
   }
-  .forimgabout {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-  }
+
   .forimgabout img {
     width: 100%;
     height: 100%;

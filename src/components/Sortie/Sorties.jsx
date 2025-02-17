@@ -7,6 +7,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
+import i18next from "i18next";
 
 const CardComponent = ({ href }) => {
   const navigate = useNavigate();
@@ -14,6 +15,8 @@ const CardComponent = ({ href }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [expanded, setExpanded] = useState({});
   const dispatch = useDispatch();
+
+  const french = "fr" === i18next.language;
 
   const HandleDelete = (id) => {
     Swal.fire({
@@ -39,7 +42,7 @@ const CardComponent = ({ href }) => {
 
   const userRole = useSelector((state) => state.auth?.user?.role);
   const admin = userRole === "admin";
-  console.log(admin);
+  console.log(sorties);
 
   const handleCardClick = (id) => {
     dispatch(chooseSortie(id));
@@ -78,10 +81,15 @@ const CardComponent = ({ href }) => {
       ) : (
         sorties.map((card, index) => {
           const isExpanded = expanded[index];
-          const shortDesc =
-            card.descFr.length > 120
+          const shortFrDesc =
+            french && card.descFr.length > 120
               ? card.descFr.slice(0, 120) + "..."
               : card.descFr;
+
+          const shortEnDesc =
+            !french && card.descEn.length > 120
+              ? card.descEn.slice(0, 120) + "..."
+              : card.descEn;
 
           return (
             <div
@@ -122,7 +130,9 @@ const CardComponent = ({ href }) => {
                   )}
                 </div>
                 <div className="card-content">
-                  <h3 className="card-title">{card.titleFr}</h3>
+                  <h3 className="card-title">
+                    {french ? card.titleFr : card.titleEn}
+                  </h3>
                   <h2 className="card-date">{card.days}</h2>
 
                   {/* Description Section */}
@@ -135,7 +145,10 @@ const CardComponent = ({ href }) => {
                       toggleExpand(index);
                     }}
                   >
-                    {isExpanded ? card.descFr : shortDesc}
+                    {!isExpanded && french && shortFrDesc}
+                    {isExpanded && french && card.descFr}
+                    {!isExpanded && !french && shortEnDesc}
+                    {isExpanded && !french && card.descEn}
                   </p>
 
                   {/* See More Button */}

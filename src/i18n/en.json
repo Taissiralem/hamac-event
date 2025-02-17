@@ -40,7 +40,6 @@
   "title6+": "Sustainability:",
   "subtitle6": "Offering eco-friendly options for environmentally respectful events.",
   "subtitle7": "With Hamac Events, every project becomes an opportunity to leave a lasting impression and make a difference.",
-  "products-details": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
   "explore-btn": "Explore Products",
   "Card-data-desc": "Your aspirations fuel our creativity, We begin by listening intently, understanding your goals, and envisioning.",
   "data-title": "Read the ticket thoroughly to understand the costumer’s",
@@ -92,7 +91,7 @@
   },
   "footer": {
     "top-footer": {
-      "description": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to",
+      "description": "With Hamac Events, every project becomes an opportunity to leave a lasting impression and make a difference.",
       "button": "Newlsetter",
       "links": {
         "explore": "Explore",
@@ -130,5 +129,7 @@
   "titleTb": "What is Team Building?",
   "description1Tb": "The success of a company relies on strong and high-performing teams. Team building is a unique opportunity to strengthen bonds, improve communication, and create a positive work environment. At Hamac Events, we design tailor-made experiences in exceptional settings, combining exciting challenges with moments of relaxation. Discover our exclusive destinations and offer your team an experience that blends enjoyment with professional development.",
   "description2Tb": "Team building is at the heart of our approach to strengthening team cohesion and engagement. By offering unique and personalized experiences, Hamac Events transforms your moments of collaboration into opportunities for collective growth.",
-  "sortiesPropose": "proposed activities :"
+  "sortiesPropose": "proposed activities :",
+  "reserver-sortie": "Book your trip now!",
+  "send-info": "Send us your contact information so we can arrange your trip"
 }

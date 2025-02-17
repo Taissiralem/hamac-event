@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import Swal from "sweetalert2";
 // import { createNewsletter } from "@/app/services/newsletter";
 import logo1 from "../../assets/logo/logo1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { createNewsletter } from "../../services/newsletter";
 
@@ -17,9 +17,19 @@ export default function Footer() {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [email, setEmail] = useState("");
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleNewsletterClick = () => {
     setShowEmailInput(true); // Toggle the visibility
+  };
+  const handleNavigationToSection = (sectionId) => {
+    navigate("/"); // Navigate to the landing page
+    setTimeout(() => {
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // Delay to ensure the page is fully loaded
   };
 
   const handleEmailSubmit = (e) => {
@@ -116,24 +126,50 @@ export default function Footer() {
             <li className="title-liste">
               {t("footer.top-footer.links.explore")}
             </li>
-            <Link href="/#hero-section">
+            <a href="/#hero-section" onClick={() => window.scrollTo(0, 0)}>
               <li>{t("home")}</li>
-            </Link>
-            <Link href="/#about-section">
+            </a>
+            <Link
+              href="/"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                handleNavigationToSection("#about-section");
+              }}
+            >
               <li>{t("about")}</li>
             </Link>
-            <Link href={`/Product`}>
-              <li>{t("products")}</li>
-            </Link>
-            <Link href={`/Contact`}>
+            <a
+              href={"#services"}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                handleNavigationToSection("#services");
+              }}
+            >
+              <li>Services</li>
+            </a>
+            <a
+              href={`contact-page`}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                handleNavigationToSection(".contact-page");
+              }}
+            >
               <li>{t("contact")}</li>
-            </Link>
+            </a>
           </ul>
           <ul>
             <li className="title-liste">
               {t("footer.top-footer.links.useful-links.title")}
             </li>
-            <li>{t("footer.top-footer.links.useful-links.Give-feedback")}</li>
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100075646883318"
+                target="_blank"
+                style={{ color: "white" }}
+              >
+                {t("footer.top-footer.links.useful-links.Give-feedback")}
+              </a>
+            </li>
             <li>{t("footer.top-footer.links.useful-links.Support")}</li>
           </ul>
         </div>

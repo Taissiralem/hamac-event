@@ -58,12 +58,12 @@ export default function BasicTable() {
           <TableHead>
             <TableRow>
               <TableCell>Nom</TableCell>
-              <TableCell align="right">Prenom</TableCell>
-              <TableCell align="right">Email</TableCell>
-              <TableCell align="right">Numéro de téléphone</TableCell>
-              <TableCell align="right">Motif</TableCell>
-              <TableCell align="right">Message</TableCell>
-              <TableCell align="right">َAction</TableCell>
+              <TableCell align="left">Prenom</TableCell>
+              <TableCell align="left">Email</TableCell>
+              <TableCell align="left">Numéro de téléphone</TableCell>
+              <TableCell align="left">Motif</TableCell>
+              <TableCell align="left">Message</TableCell>
+              <TableCell align="left">َAction</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -76,13 +76,13 @@ export default function BasicTable() {
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell align="right">{row.firstName}</TableCell>
-                  <TableCell align="right">{row.email}</TableCell>
-                  <TableCell align="right">{row.phonenumber}</TableCell>
-                  <TableCell align="right">{row.motif}</TableCell>
-                  <TableCell align="right">{row.message}</TableCell>
+                  <TableCell align="left">{row.firstName}</TableCell>
+                  <TableCell align="left">{row.email}</TableCell>
+                  <TableCell align="left">{row.phonenumber}</TableCell>
+                  <TableCell align="left">{row.motif}</TableCell>
+                  <TableCell align="left">{row.message}</TableCell>
                   <TableCell
-                    align="right"
+                    align="left"
                     style={{ cursor: "pointer", color: "red" }}
                     onClick={() => handleDelete(row.id)}
                   >

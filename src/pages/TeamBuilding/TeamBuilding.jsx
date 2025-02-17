@@ -34,10 +34,9 @@ export default function TeamBuilding() {
 
       <hr className="teambuildingHR" id="contact-tb" />
       <div className="right rightTB">
-        <h2>Réserver votre Sortie dès maintenant!</h2>
+        <h2>{t("reserver-sortie")}</h2>
         <p>
-          Envoyez nous vos cordonnées pour que nous puissions arranger votre
-          sortie
+          {t("send-info") }
         </p>
         <ContactForm motif={`Team Building / ${clickedSortie}`} />
       </div>

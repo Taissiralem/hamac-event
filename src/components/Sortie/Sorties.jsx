@@ -122,7 +122,7 @@ const CardComponent = ({ href }) => {
                         className="edit-badge card-badge"
                         onClick={(e) => {
                           e.preventDefault();
-                          navigate(`edit-sortie/${card._id}`);
+                          navigate(`/admin/tb-sorties/edit-sortie/${card._id}`);
                         }}
                       >
                         <FaRegEdit />

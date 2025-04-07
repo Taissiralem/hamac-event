@@ -13,8 +13,8 @@ export const deleteSortie = (id) => {
   return axios.delete(`${BASE_API_URL}/tb/addSortie/${id}`);
 };
 
-export const getSorties = () => {
-  return axios.get(`${BASE_API_URL}/tb/addSortie`);
+export const getSorties = (page) => {
+  return axios.get(`${BASE_API_URL}/tb/addSortie?page=${page}`);
 };
 
 export const getSortieById = (id) => {

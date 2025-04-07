@@ -8,12 +8,18 @@ import { useNavigate } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import i18next from "i18next";
+import { Pagination } from "@mui/material";
 
 const CardComponent = ({ href }) => {
   const navigate = useNavigate();
   const [sorties, setSorties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [expanded, setExpanded] = useState({});
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  console.log(page, totalPages, "PPPPPPPPPPPPPPPPPPPP");
+
   const dispatch = useDispatch();
 
   const french = "fr" === i18next.language;
@@ -40,6 +46,9 @@ const CardComponent = ({ href }) => {
     });
   };
 
+  const handlePageChange = (event, value) => {
+    setPage(value);
+  };
   const userRole = useSelector((state) => state.auth?.user?.role);
   const admin = userRole === "admin";
   console.log(sorties);
@@ -50,9 +59,10 @@ const CardComponent = ({ href }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getSorties()
+    getSorties(page)
       .then((data) => {
         setSorties(data.data.sorties);
+        setTotalPages(data.data.totalPages);
       })
       .catch((error) => {
         console.error("Error fetching sorties:", error);
@@ -60,7 +70,7 @@ const CardComponent = ({ href }) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [page]);
 
   const toggleExpand = (index) => {
     setExpanded((prev) => ({
@@ -169,6 +179,15 @@ const CardComponent = ({ href }) => {
           );
         })
       )}
+      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+        {sorties.length > 0 && (
+          <Pagination
+            count={totalPages}
+            page={page}
+            onChange={handlePageChange}
+          />
+        )}
+      </div>
     </div>
   );
 };

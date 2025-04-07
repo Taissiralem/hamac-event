@@ -133,6 +133,10 @@
 .menu-bar {
   display: none;
 }
+.logout2 {
+  bottom: unset !important;
+  right: 70px !important;
+}
 @media (max-width: 600px) {
   .navbarlast {
     flex-direction: row-reverse;

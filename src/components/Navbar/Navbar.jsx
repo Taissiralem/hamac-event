@@ -9,6 +9,9 @@ import fr from "../../assets/fr.jpg";
 import en from "../../assets/en.png";
 import i18n from "../../i18n/i18n";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/slices/authSlice";
+import { SlLogout } from "react-icons/sl";
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -19,6 +22,7 @@ export default function Navbar() {
   const language = i18n.language;
   const languageMenuRef = useRef(null);
   const sidebarMenuRef = useRef(null);
+  const dispatch = useDispatch();
 
   const handleNavigationToSection = (sectionId) => {
     navigate("/"); // Navigate to the landing page
@@ -28,6 +32,12 @@ export default function Navbar() {
         section.scrollIntoView({ behavior: "smooth" });
       }
     }, 100); // Delay to ensure the page is fully loaded
+  };
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -256,6 +266,12 @@ export default function Navbar() {
           <RiMenu3Fill color="white" size={46} />
         </div>
       </div>
+      <SlLogout
+        className="logout logout2"
+        color="white"
+        size={25}
+        onClick={handleLogout}
+      />
     </nav>
   );
 }

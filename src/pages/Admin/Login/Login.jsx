@@ -21,6 +21,8 @@ const Login = () => {
     e.preventDefault(); // Prevent the default form submission
     setError("");
     setLoading(true);
+    setEmail("");
+    setPassword("");
 
     try {
       const response = await SignInUser({ email, password });
@@ -35,6 +37,7 @@ const Login = () => {
           token: response.data.token,
         })
       );
+
       navigate("/admin/home");
     } catch (err) {
       console.error("Error logging in:", err.response?.data || err.message);

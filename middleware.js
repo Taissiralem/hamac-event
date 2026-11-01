@@ -12,9 +12,9 @@ export function middleware(request) {
   }
   const accept = request.headers.get("accept-language") || "";
   const preferred = accept.toLowerCase().startsWith("en") ? "en" : defaultLocale;
-  const url = request.nextUrl.clone();
-  url.pathname = `/${preferred}${pathname === "/" ? "" : pathname}`;
-  return NextResponse.redirect(url);
+  // Redirection relative : derrière Nginx, request.nextUrl pointe sur l'hôte interne (localhost:3000)
+  const location = `/${preferred}${pathname === "/" ? "" : pathname}${request.nextUrl.search}`;
+  return new NextResponse(null, { status: 307, headers: { Location: location } });
 }
 
 export const config = {

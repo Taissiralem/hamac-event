@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 const TYPES = ["salon", "team-building", "sortie", "autre"];
@@ -9,7 +9,13 @@ export default function ContactForm({ t, defaultType = "salon", motif = "", comp
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [error, setError] = useState("");
   const formRef = useRef(null);
+  const successRef = useRef(null);
   const f = t.form;
+
+  // Ramène la confirmation à l'écran (le formulaire, plus haut, a disparu)
+  useEffect(() => {
+    if (status === "sent") successRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [status]);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -39,7 +45,7 @@ export default function ContactForm({ t, defaultType = "salon", motif = "", comp
 
   if (status === "sent") {
     return (
-      <div role="status" className="rounded-sm border-l-4 border-orange bg-white p-8 text-ink">
+      <div ref={successRef} role="status" className="rounded-sm border-l-4 border-orange bg-white p-8 text-ink">
         <p className="display text-2xl">{f.successTitle}</p>
         <p className="mt-3 text-stone">{f.successText}</p>
         <button type="button" className="link-underline mt-6 font-semibold" onClick={() => setStatus("idle")}>

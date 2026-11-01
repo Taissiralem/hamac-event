@@ -107,10 +107,11 @@ export default function Header({ locale, t }) {
         </div>
       </div>
 
+      {/* Hauteur explicite : le backdrop-blur du header crée un bloc conteneur pour les éléments fixed */}
       <div
         id="menu-mobile"
         hidden={!open}
-        className="floorplan fixed inset-x-0 bottom-0 top-18 overflow-y-auto bg-ink text-paper xl:hidden"
+        className="floorplan fixed inset-x-0 top-18 h-[calc(100dvh-4.5rem)] overflow-y-auto bg-ink text-paper xl:hidden"
       >
         <nav aria-label="Navigation mobile" className="shell flex min-h-full flex-col py-8">
           <ul className="flex flex-col">

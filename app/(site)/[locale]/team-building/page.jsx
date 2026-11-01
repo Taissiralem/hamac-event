@@ -2,7 +2,7 @@ import { getDictionary } from "@/lib/dictionaries";
 import { getContent } from "@/lib/content/get";
 import { fetchRealisations, fetchSorties } from "@/lib/api";
 import { buildMetadata } from "@/lib/seo";
-import { tr } from "@/lib/i18n";
+import { href, tr } from "@/lib/i18n";
 import Photo from "@/components/site/Photo";
 import Gallery from "@/components/site/Gallery";
 import ContactForm from "@/components/site/ContactForm";
@@ -15,13 +15,14 @@ export async function generateMetadata({ params }) {
   return buildMetadata({ locale, routeKey: "teamBuilding", ...c.seo, image: c.hero.image });
 }
 
-export default async function TeamBuildingPage({ params }) {
+export default async function TeamBuildingPage({ params, searchParams }) {
   const { locale } = await params;
+  const page = Math.max(parseInt((await searchParams).page) || 1, 1);
   const t = getDictionary(locale);
-  const [c, realisations, programmes] = await Promise.all([
+  const [c, realisations, { sorties: programmes, totalPages }] = await Promise.all([
     getContent("teamBuilding"),
     fetchRealisations({ category: "team-building", limit: 10 }),
-    fetchSorties("team-building"),
+    fetchSorties("team-building", page),
   ]);
   const L = (v) => tr(v, locale);
   const testimonials = c.testimonials.items.filter((x) => L(x.quote));
@@ -93,10 +94,17 @@ export default async function TeamBuildingPage({ params }) {
 
       {/* Activités proposées (gérées dans l'admin, onglet Programmes) */}
       {programmes.length > 0 && (
-        <section className="section border-t border-ink/10">
+        <section id="programmes" className="section scroll-mt-20 border-t border-ink/10">
           <div className="shell">
             <SectionHeading title={L(c.programmes.title)} text={L(c.programmes.text)} />
-            <ProgrammeGrid items={programmes} locale={locale} />
+            <ProgrammeGrid
+              items={programmes}
+              locale={locale}
+              t={t}
+              basePath={href(locale, "teamBuilding")}
+              page={page}
+              totalPages={totalPages}
+            />
           </div>
         </section>
       )}

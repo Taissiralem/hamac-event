@@ -2,7 +2,7 @@ import { getDictionary } from "@/lib/dictionaries";
 import { getContent } from "@/lib/content/get";
 import { fetchSorties } from "@/lib/api";
 import { buildMetadata } from "@/lib/seo";
-import { tr } from "@/lib/i18n";
+import { href, tr } from "@/lib/i18n";
 import Photo from "@/components/site/Photo";
 import Icon from "@/components/site/Icon";
 import ContactForm from "@/components/site/ContactForm";
@@ -15,10 +15,13 @@ export async function generateMetadata({ params }) {
   return buildMetadata({ locale, routeKey: "sortie", ...c.seo, image: c.hero.image });
 }
 
-export default async function SortiePage({ params }) {
+export default async function SortiePage({ params, searchParams }) {
   const { locale } = await params;
+  const page = Math.max(parseInt((await searchParams).page) || 1, 1);
   const t = getDictionary(locale);
-  const [c, sorties] = await Promise.all([getContent("sortie"), fetchSorties("sortie")]);
+  const [c, own] = await Promise.all([getContent("sortie"), fetchSorties("sortie", page)]);
+  // Tant qu'aucun programme n'est classé « Sortie pédagogique » dans l'admin, on montre tous les programmes
+  const { sorties, totalPages } = own.totalPages ? own : await fetchSorties("", page);
   const L = (v) => tr(v, locale);
   const en = locale === "en";
 
@@ -60,11 +63,18 @@ export default async function SortiePage({ params }) {
       </section>
 
       {/* Destinations et programmes (gérés dans l'admin) */}
-      <section className="section bg-sand">
+      <section id="programmes" className="section scroll-mt-20 bg-sand">
         <div className="shell">
           <SectionHeading title={L(c.programmes.title)} text={L(c.programmes.text)} />
           {sorties.length ? (
-            <ProgrammeGrid items={sorties} locale={locale} />
+            <ProgrammeGrid
+              items={sorties}
+              locale={locale}
+              t={t}
+              basePath={href(locale, "sortie")}
+              page={page}
+              totalPages={totalPages}
+            />
           ) : (
             <p className="mt-8 text-stone">{t.misc.programmeEmpty}</p>
           )}

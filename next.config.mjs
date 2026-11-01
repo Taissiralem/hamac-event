@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 // Domaine de l'API (images uploadées en mode local) déduit de NEXT_PUBLIC_API_URL
 const apiUrl = new URL(process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1");
 
 const nextConfig = {
   output: "standalone",
+  // Racine fixée : un package-lock.json dans un dossier parent (ex. /var/www) décalerait server.js
+  outputFileTracingRoot: path.dirname(fileURLToPath(import.meta.url)),
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],

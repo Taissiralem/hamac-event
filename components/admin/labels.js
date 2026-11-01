@@ -23,3 +23,9 @@ export const REALISATION_CATEGORIES = [
   { value: "team-building", label: "Team Building" },
   { value: "sorties", label: "Sorties pédagogiques" },
 ];
+
+// Page du site où apparaît un programme (onglet Programmes)
+export const SORTIE_CATEGORIES = [
+  { value: "team-building", label: "Team Building" },
+  { value: "sortie", label: "Sortie pédagogique" },
+];

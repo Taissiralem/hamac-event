@@ -1,11 +1,12 @@
 import { getDictionary } from "@/lib/dictionaries";
 import { getContent } from "@/lib/content/get";
-import { fetchRealisations } from "@/lib/api";
+import { fetchRealisations, fetchSorties } from "@/lib/api";
 import { buildMetadata } from "@/lib/seo";
 import { tr } from "@/lib/i18n";
 import Photo from "@/components/site/Photo";
 import Gallery from "@/components/site/Gallery";
 import ContactForm from "@/components/site/ContactForm";
+import ProgrammeGrid from "@/components/site/ProgrammeGrid";
 import { Checklist, Faq, PhotoHero, SectionHeading, SplitFeature } from "@/components/site/Blocks";
 
 export async function generateMetadata({ params }) {
@@ -17,9 +18,10 @@ export async function generateMetadata({ params }) {
 export default async function TeamBuildingPage({ params }) {
   const { locale } = await params;
   const t = getDictionary(locale);
-  const [c, realisations] = await Promise.all([
+  const [c, realisations, programmes] = await Promise.all([
     getContent("teamBuilding"),
     fetchRealisations({ category: "team-building", limit: 10 }),
+    fetchSorties("team-building"),
   ]);
   const L = (v) => tr(v, locale);
   const testimonials = c.testimonials.items.filter((x) => L(x.quote));
@@ -88,6 +90,16 @@ export default async function TeamBuildingPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* Activités proposées (gérées dans l'admin, onglet Programmes) */}
+      {programmes.length > 0 && (
+        <section className="section border-t border-ink/10">
+          <div className="shell">
+            <SectionHeading title={L(c.programmes.title)} text={L(c.programmes.text)} />
+            <ProgrammeGrid items={programmes} locale={locale} />
+          </div>
+        </section>
+      )}
 
       {/* Programme sur mesure */}
       <section className="section bg-sand">

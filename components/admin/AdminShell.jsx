@@ -13,7 +13,7 @@ const NAV = [
   { href: "/admin/pages", label: "Pages du site" },
   { href: "/admin/realisations", label: "Réalisations" },
   { href: "/admin/blog", label: "Blog" },
-  { href: "/admin/sorties", label: "Sorties pédagogiques" },
+  { href: "/admin/sorties", label: "Programmes" },
   { href: "/admin/newsletter", label: "Newsletter" },
   { href: "/admin/pages/settings", label: "Coordonnées et réseaux" },
 ];

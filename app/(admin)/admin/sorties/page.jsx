@@ -4,25 +4,24 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { api } from "@/lib/admin/api";
 import { Empty, Loading, PageHeader } from "@/components/admin/ui";
+import { SORTIE_CATEGORIES } from "@/components/admin/labels";
+
+const categoryLabel = (c) => SORTIE_CATEGORIES.find((o) => o.value === (c || "team-building")).label;
 
 export default function SortiesList() {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-    // L'API pagine par 9 : on charge toutes les pages
-    (async () => {
-      const first = await api("/tb/addSortie?page=1");
-      let all = first.sorties;
-      for (let p = 2; p <= first.totalPages; p++) all = all.concat((await api(`/tb/addSortie?page=${p}`)).sorties);
-      setItems(all);
-    })().catch(() => setItems([]));
+    api("/tb/addSortie?all=1")
+      .then((d) => setItems(d.sorties))
+      .catch(() => setItems([]));
   }, []);
 
   return (
     <>
       <PageHeader
-        title="Sorties pédagogiques"
-        description="Destinations et programmes affichés sur la page Sortie pédagogique."
+        title="Programmes"
+        description="Activités et sorties affichées sur les pages Team Building et Sortie pédagogique."
         actions={
           <Link href="/admin/sorties/nouveau" className="inline-flex min-h-10 items-center rounded-lg bg-orange px-4 text-sm font-semibold text-night hover:bg-[#f08a45]">
             Nouveau programme
@@ -43,8 +42,8 @@ export default function SortiesList() {
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-semibold">{s.titleFr}</span>
                   <span className="block text-sm text-stone">
-                    {s.localisation}
-                    {s.days && ` · ${s.days} jour(s)`}
+                    {categoryLabel(s.category)} · {s.localisation}
+                    {s.days?.trim() && ` · ${s.days.trim()}`}
                   </span>
                 </span>
               </Link>
@@ -52,7 +51,7 @@ export default function SortiesList() {
           ))}
         </ul>
       ) : (
-        <Empty>Aucun programme. Ajoutez votre première destination.</Empty>
+        <Empty>Aucun programme. Ajoutez votre première activité ou sortie.</Empty>
       )}
     </>
   );

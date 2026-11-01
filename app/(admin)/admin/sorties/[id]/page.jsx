@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { api, refreshSite } from "@/lib/admin/api";
-import { BiInput, Button, Card, ImagesInput, Loading, PageHeader, TextInput, useToast } from "@/components/admin/ui";
+import { BiInput, Button, Card, ImagesInput, Loading, PageHeader, SelectInput, TextInput, useToast } from "@/components/admin/ui";
+import { SORTIE_CATEGORIES } from "@/components/admin/labels";
 
 // L'API historique des sorties stocke les champs séparément (titleFr / titleEn…)
 const fromApi = (s) => ({
@@ -13,6 +14,7 @@ const fromApi = (s) => ({
   days: s.days || "",
   localisation: s.localisation || "",
   images: s.images || [],
+  category: s.category || "team-building",
 });
 const toApi = (v) => ({
   titleFr: v.title.fr,
@@ -21,6 +23,7 @@ const toApi = (v) => ({
   descEn: v.desc.en || v.desc.fr,
   days: v.days,
   localisation: v.localisation,
+  category: v.category,
   existingImages: v.images,
 });
 
@@ -85,8 +88,9 @@ export default function SortieEditor() {
         <div className="space-y-6">
           <Card title="Informations">
             <div className="space-y-4">
+              <SelectInput label="Page du site" value={item.category} onChange={set("category")} options={SORTIE_CATEGORIES} />
               <TextInput label="Lieu" value={item.localisation} onChange={set("localisation")} />
-              <TextInput label="Durée (en jours)" value={item.days} onChange={set("days")} />
+              <TextInput label="Durée (ex. « 2 à 3 heures », « 5 jours »)" value={item.days} onChange={set("days")} />
             </div>
           </Card>
           {!isNew && (

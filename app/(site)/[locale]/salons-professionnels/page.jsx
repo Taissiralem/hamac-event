@@ -9,6 +9,7 @@ import Paragraphs from "@/components/site/Paragraphs";
 import Gallery from "@/components/site/Gallery";
 import BlogTeaser from "@/components/site/BlogTeaser";
 import ContactForm from "@/components/site/ContactForm";
+import VrTour from "@/components/site/VrTour";
 import { Checklist, Faq, PhotoHero, SectionHeading, SplitFeature, Steps } from "@/components/site/Blocks";
 
 export async function generateMetadata({ params }) {
@@ -92,22 +93,63 @@ export default async function SalonsPage({ params }) {
         </div>
       </section>
 
+      {/* Module VR (masqué si aucun lien) */}
+      {c.vr.url?.trim() && (
+        <section className="floorplan section bg-ink text-paper">
+          <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <h2 className="display h-section">{L(c.vr.title)}</h2>
+              <p className="lead mt-6 text-paper/80">{L(c.vr.text)}</p>
+              {c.vr.points?.length > 0 && (
+                <div className="mt-8">
+                  <Checklist items={c.vr.points} locale={locale} light />
+                </div>
+              )}
+            </div>
+            <div className="lg:col-span-8">
+              <VrTour url={c.vr.url.trim()} cover={c.vr.cover} caption={L(c.vr.caption)} locale={locale} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Réalisations, ou « Nos solutions en images » tant qu'il n'y en a pas */}
+      <section className="section">
+        <div className="shell">
+          {realisations.length > 0 ? (
+            <>
+              <SectionHeading title={L(c.gallery.title)} text={L(c.gallery.text)} />
+              <div className="mt-12">
+                <Gallery items={realisations} locale={locale} />
+              </div>
+            </>
+          ) : (
+            <>
+              <SectionHeading title={L(c.gallery.inspirationTitle)} text={L(c.gallery.inspirationText)} />
+              <ul className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3">
+                {c.gallery.images.filter((x) => x.image).map((x, i) => (
+                  <li key={i} className="relative aspect-[4/3] overflow-hidden rounded-sm bg-mist">
+                    <Photo src={x.image} alt={L(x.title)} sizes="(min-width: 768px) 33vw, 50vw" />
+                    {L(x.title) && (
+                      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/85 to-transparent p-3 pt-10 text-sm font-semibold text-paper sm:p-4">
+                        {L(x.title)}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              {L(c.gallery.inspirationNote) && <p className="mt-4 text-sm text-stone">{L(c.gallery.inspirationNote)}</p>}
+            </>
+          )}
+        </div>
+      </section>
+
       {/* Notre accompagnement */}
       <section className="section bg-sand">
         <div className="shell">
           <SectionHeading title={L(c.process.title)} text={L(c.process.text)} />
           <div className="mt-12">
             <Steps steps={c.process.steps} locale={locale} />
-          </div>
-        </div>
-      </section>
-
-      {/* Réalisations */}
-      <section className="section">
-        <div className="shell">
-          <SectionHeading title={L(c.gallery.title)} text={L(c.gallery.text)} />
-          <div className="mt-12">
-            <Gallery items={realisations} locale={locale} emptyText={t.misc.galleryEmpty} />
           </div>
         </div>
       </section>
@@ -127,6 +169,18 @@ export default async function SalonsPage({ params }) {
           <div className="lg:col-span-5">
             <h2 className="display h-section">{L(c.cta.title)}</h2>
             <p className="lead mt-6 text-paper/80">{L(c.cta.text)}</p>
+            {c.cta.points?.length > 0 && (
+              <ul className="mt-8 space-y-3 text-lg">
+                {c.cta.points.map((p, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-orange text-night">
+                      <Icon name="check" className="size-4" strokeWidth={2.4} />
+                    </span>
+                    {L(p.text)}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="rounded-sm bg-paper p-6 text-ink sm:p-9 lg:col-span-7">
             <ContactForm t={t} defaultType="salon" motif="Salons professionnels" />

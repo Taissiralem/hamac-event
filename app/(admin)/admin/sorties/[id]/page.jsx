@@ -15,6 +15,10 @@ const fromApi = (s) => ({
   localisation: s.localisation || "",
   images: s.images || [],
   category: s.category || "team-building",
+  participants: s.participants || "",
+  audience: { fr: s.audienceFr || "", en: s.audienceEn || "" },
+  objective: { fr: s.objectiveFr || "", en: s.objectiveEn || "" },
+  programme: { fr: s.programmeFr || "", en: s.programmeEn || "" },
 });
 const toApi = (v) => ({
   titleFr: v.title.fr,
@@ -24,6 +28,13 @@ const toApi = (v) => ({
   days: v.days,
   localisation: v.localisation,
   category: v.category,
+  participants: v.participants,
+  audienceFr: v.audience.fr,
+  audienceEn: v.audience.en,
+  objectiveFr: v.objective.fr,
+  objectiveEn: v.objective.en,
+  programmeFr: v.programme.fr,
+  programmeEn: v.programme.en,
   existingImages: v.images,
 });
 
@@ -85,12 +96,24 @@ export default function SortieEditor() {
             <ImagesInput label="Photos" value={item.images} onChange={set("images")} />
           </div>
         </Card>
+        <Card
+          title="Fiche détaillée (facultatif)"
+          help="Affichée quand le visiteur clique sur « Voir le détail ». Les champs vides ne s'affichent pas."
+          className="lg:col-span-2"
+        >
+          <div className="space-y-6">
+            <BiInput label="Objectif pédagogique" value={item.objective} onChange={set("objective")} multiline rows={3} />
+            <BiInput label="Public concerné (ex. « Collèges et lycées »)" value={item.audience} onChange={set("audience")} />
+            <BiInput label="Programme indicatif (une étape par ligne)" value={item.programme} onChange={set("programme")} multiline rows={5} />
+          </div>
+        </Card>
         <div className="space-y-6">
           <Card title="Informations">
             <div className="space-y-4">
               <SelectInput label="Page du site" value={item.category} onChange={set("category")} options={SORTIE_CATEGORIES} />
               <TextInput label="Lieu" value={item.localisation} onChange={set("localisation")} />
               <TextInput label="Durée (ex. « 2 à 3 heures », « 5 jours »)" value={item.days} onChange={set("days")} />
+              <TextInput label="Participants (ex. « 10 à 40 personnes »)" value={item.participants} onChange={set("participants")} />
             </div>
           </Card>
           {!isNew && (

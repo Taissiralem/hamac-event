@@ -16,6 +16,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "my.matterport.com", pathname: "/api/**" },
       {
         protocol: apiUrl.protocol.replace(":", ""),
         hostname: apiUrl.hostname,

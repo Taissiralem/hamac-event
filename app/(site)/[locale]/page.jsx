@@ -35,26 +35,7 @@ export default async function HomePage({ params }) {
         secondary={{ href: href(locale, "salons"), label: t.nav.salons }}
       />
 
-      {/* Nos univers */}
-      <section className="section">
-        <div className="shell">
-          <SectionHeading title={L(c.universes.title)} />
-          <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
-            {c.universes.items.map((item, i) => (
-              <LinkCard
-                key={i}
-                href={href(locale, item.link || "contact")}
-                image={item.image}
-                title={L(item.title)}
-                text={L(item.text)}
-                cta={t.cta.discover}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mise en avant prioritaire : salons et stands */}
+      {/* Mise en avant prioritaire, juste sous le bandeau : salons et stands */}
       <section className="floorplan section bg-ink text-paper">
         <div className="shell">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -68,7 +49,7 @@ export default async function HomePage({ params }) {
               </div>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Link href={href(locale, "salons")} className="btn btn-primary">
-                  {t.nav.salons}
+                  {L(c.salons.cta) || t.nav.salons}
                 </Link>
                 <Link href={href(locale, "contact")} className="btn btn-ghost-light">
                   {t.cta.quote}
@@ -91,6 +72,25 @@ export default async function HomePage({ params }) {
                 {t.cta.project}
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nos univers */}
+      <section className="section">
+        <div className="shell">
+          <SectionHeading title={L(c.universes.title)} />
+          <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
+            {c.universes.items.map((item, i) => (
+              <LinkCard
+                key={i}
+                href={href(locale, item.link || "contact")}
+                image={item.image}
+                title={L(item.title)}
+                text={L(item.text)}
+                cta={t.cta.discover}
+              />
+            ))}
           </div>
         </div>
       </section>

@@ -19,9 +19,8 @@ export default async function SortiePage({ params, searchParams }) {
   const { locale } = await params;
   const page = Math.max(parseInt((await searchParams).page) || 1, 1);
   const t = getDictionary(locale);
-  const [c, own] = await Promise.all([getContent("sortie"), fetchSorties("sortie", page)]);
-  // Tant qu'aucun programme n'est classé « Sortie pédagogique » dans l'admin, on montre tous les programmes
-  const { sorties, totalPages } = own.totalPages ? own : await fetchSorties("", page);
+  // Uniquement les programmes classés « Sortie pédagogique » : pas d'activités de team building ici
+  const [c, { sorties, totalPages }] = await Promise.all([getContent("sortie"), fetchSorties("sortie", page)]);
   const L = (v) => tr(v, locale);
   const en = locale === "en";
 

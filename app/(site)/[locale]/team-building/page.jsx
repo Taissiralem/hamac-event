@@ -6,6 +6,7 @@ import { href, tr } from "@/lib/i18n";
 import Photo from "@/components/site/Photo";
 import Gallery from "@/components/site/Gallery";
 import ContactForm from "@/components/site/ContactForm";
+import BlogTeaser from "@/components/site/BlogTeaser";
 import ProgrammeGrid from "@/components/site/ProgrammeGrid";
 import { Checklist, Faq, PhotoHero, SectionHeading, SplitFeature } from "@/components/site/Blocks";
 
@@ -142,6 +143,8 @@ export default async function TeamBuildingPage({ params, searchParams }) {
           )}
         </div>
       </section>
+
+      <BlogTeaser locale={locale} t={t} title={L(c.blog.title)} category="team-building" />
 
       <section className="section border-t border-ink/10">
         <div className="shell">

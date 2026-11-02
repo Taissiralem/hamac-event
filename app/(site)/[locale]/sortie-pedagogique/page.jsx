@@ -6,6 +6,7 @@ import { href, tr } from "@/lib/i18n";
 import Photo from "@/components/site/Photo";
 import Icon from "@/components/site/Icon";
 import ContactForm from "@/components/site/ContactForm";
+import BlogTeaser from "@/components/site/BlogTeaser";
 import ProgrammeGrid from "@/components/site/ProgrammeGrid";
 import { Checklist, Faq, PhotoHero, SectionHeading, SplitFeature } from "@/components/site/Blocks";
 
@@ -87,6 +88,8 @@ export default async function SortiePage({ params, searchParams }) {
           </SplitFeature>
         </div>
       </section>
+
+      <BlogTeaser locale={locale} t={t} title={L(c.blog.title)} category="sorties" />
 
       <section className="section border-t border-ink/10">
         <div className="shell">

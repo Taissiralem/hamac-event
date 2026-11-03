@@ -52,15 +52,17 @@ export default function Header({ locale, t }) {
         {t.nav.skip}
       </a>
       <div className="shell flex h-18 items-center justify-between gap-6 lg:h-20">
-        <Link href={href(locale, "home")} className="flex items-center gap-3" aria-label="Hamac Events">
+        <Link href={href(locale, "home")} className="flex shrink-0 items-center gap-3" aria-label="Hamac Events">
           <Image src="/brand/hamac-mark.png" alt="" width={40} height={40} priority className="size-9 lg:size-10" />
-          <span className="display text-lg leading-none tracking-tight lg:text-xl">
+          <span className="display whitespace-nowrap text-lg leading-none tracking-tight lg:text-xl">
             Hamac Events
           </span>
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden xl:block">
-          <ul className="flex items-center gap-5 whitespace-nowrap text-[0.95rem] font-medium 2xl:gap-7">
+          {/* Espacement fixe : le conteneur plafonne à 1216 px utiles, élargir l'écran ne donne pas plus de place.
+              Logo + liens + « Demander un devis » doivent tenir dès 1280 px (1169 px utiles). */}
+          <ul className="flex items-center gap-4 whitespace-nowrap text-[0.9rem] font-medium">
             {NAV.map((key) => (
               <li key={key}>
                 <Link
@@ -77,7 +79,7 @@ export default function Header({ locale, t }) {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <Link
             href={switchHref}
             hrefLang={otherLocale}
@@ -87,7 +89,7 @@ export default function Header({ locale, t }) {
             {otherLocale.toUpperCase()}
             <span className="sr-only"> — {t.nav.switchLang}</span>
           </Link>
-          <Link href={href(locale, "contact")} className="btn btn-primary hidden !min-h-11 !px-5 !text-[0.95rem] md:inline-flex">
+          <Link href={href(locale, "contact")} className="btn btn-primary hidden whitespace-nowrap !min-h-11 !px-5 !text-[0.95rem] md:inline-flex">
             {t.cta.quote}
           </Link>
           <button

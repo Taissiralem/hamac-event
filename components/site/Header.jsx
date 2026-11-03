@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { href, routes } from "@/lib/i18n";
 
-const NAV = ["home", "salons", "teamBuilding", "sortie", "about", "contact"];
+const NAV = ["home", "salons", "teamBuilding", "sortie", "about", "blog", "contact"];
 // Pages qui commencent par une grande photo : l'en-tête est transparent par-dessus
 const OVERLAY_PAGES = ["", routes.salons, routes.teamBuilding, routes.sortie, routes.about];
 
@@ -60,7 +60,7 @@ export default function Header({ locale, t }) {
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden xl:block">
-          <ul className="flex items-center gap-7 text-[0.95rem] font-medium">
+          <ul className="flex items-center gap-5 whitespace-nowrap text-[0.95rem] font-medium 2xl:gap-7">
             {NAV.map((key) => (
               <li key={key}>
                 <Link
@@ -115,7 +115,7 @@ export default function Header({ locale, t }) {
       >
         <nav aria-label="Navigation mobile" className="shell flex min-h-full flex-col py-8">
           <ul className="flex flex-col">
-            {[...NAV, "blog"].map((key) => (
+            {NAV.map((key) => (
               <li key={key} className="border-b border-paper/15">
                 <Link
                   href={href(locale, key)}

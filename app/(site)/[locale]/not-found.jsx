@@ -1,10 +1,13 @@
+"use client";
+
+// Composant client : lire les en-têtes de la requête ici rendait TOUTES les pages dynamiques
+// (la page 404 est intégrée à chaque page comme solution de repli).
 import Link from "next/link";
-import { headers } from "next/headers";
+import { usePathname } from "next/navigation";
 import { getDictionary } from "@/lib/dictionaries";
 
-export default async function NotFound() {
-  const path = (await headers()).get("x-pathname") || "";
-  const locale = path.startsWith("/en") ? "en" : "fr";
+export default function NotFound() {
+  const locale = usePathname()?.startsWith("/en") ? "en" : "fr";
   const t = getDictionary(locale);
   return (
     <section className="floorplan-light flex min-h-[70vh] items-center pb-20 pt-36">

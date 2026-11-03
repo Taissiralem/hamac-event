@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { tr } from "@/lib/i18n";
+import { loaderFor } from "@/lib/imageLoader";
 
 // Mosaïque de réalisations + visionneuse plein écran (flèches du clavier, Échap pour fermer)
 export default function Gallery({ items, locale, emptyText }) {
@@ -54,6 +55,7 @@ export default function Gallery({ items, locale, emptyText }) {
             >
               <Image
                 src={p.src}
+                loader={loaderFor(p.src)}
                 alt={p.title}
                 fill
                 sizes={i % 5 === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
@@ -77,7 +79,7 @@ export default function Gallery({ items, locale, emptyText }) {
         {current && (
           <figure>
             <div className="relative aspect-[3/2] w-full">
-              <Image src={current.src} alt={current.title} fill sizes="94vw" className="object-contain" />
+              <Image src={current.src} loader={loaderFor(current.src)} alt={current.title} fill sizes="94vw" className="object-contain" />
             </div>
             <figcaption className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between">
               <div>

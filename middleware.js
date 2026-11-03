@@ -4,12 +4,7 @@ import { locales, defaultLocale } from "@/lib/i18n";
 // Redirige toute URL sans préfixe de langue vers la langue préférée (fr par défaut)
 export function middleware(request) {
   const { pathname } = request.nextUrl;
-  if (locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
-    // Transmet le chemin aux composants serveur (ex. page 404 dans la bonne langue)
-    const headers = new Headers(request.headers);
-    headers.set("x-pathname", pathname);
-    return NextResponse.next({ request: { headers } });
-  }
+  if (locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) return NextResponse.next();
   const accept = request.headers.get("accept-language") || "";
   const preferred = accept.toLowerCase().startsWith("en") ? "en" : defaultLocale;
   // Derrière Nginx, request.nextUrl pointe sur l'hôte interne (localhost:3000) : on reprend l'hôte public

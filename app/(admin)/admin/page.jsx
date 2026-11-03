@@ -16,9 +16,10 @@ export default function Dashboard() {
       api("/posts/admin"),
       api("/realisations?limit=100"),
       api("/newsletter/count"),
+      api("/stats/summary?days=7").catch(() => null),
     ])
-      .then(([stats, latest, posts, realisations, newsletter]) =>
-        setData({ stats, latest: latest.Contacts.slice(0, 5), posts, realisations, newsletter })
+      .then(([stats, latest, posts, realisations, newsletter, traffic]) =>
+        setData({ stats, latest: latest.Contacts.slice(0, 5), posts, realisations, newsletter, traffic })
       )
       .catch(() => setData({ error: true }));
   }, []);
@@ -84,6 +85,27 @@ export default function Dashboard() {
                 Toutes les demandes
               </Link>
             </Card>
+            <div className="space-y-6">
+            {data.traffic && (
+              <Card title="Fréquentation (7 jours)">
+                <dl className="grid grid-cols-2 gap-4">
+                  {[
+                    ["Visiteurs", data.traffic.totals.visitors],
+                    ["Pages vues", data.traffic.totals.pageviews],
+                    ["Demandes", data.traffic.totals.leads],
+                    ["Conversion", `${data.traffic.totals.conversionRate} %`],
+                  ].map(([k, v]) => (
+                    <div key={k}>
+                      <dt className="text-sm text-stone">{k}</dt>
+                      <dd className="text-2xl font-bold tabular-nums">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <Link href="/admin/statistiques" className="mt-4 inline-block text-sm font-semibold underline decoration-orange underline-offset-4">
+                  Statistiques détaillées
+                </Link>
+              </Card>
+            )}
             <Card title="Raccourcis">
               <ul className="space-y-2 text-sm font-semibold">
                 <li><Link className="underline decoration-orange underline-offset-4" href="/admin/blog/nouveau">Écrire un article</Link></li>
@@ -92,6 +114,7 @@ export default function Dashboard() {
                 <li><Link className="underline decoration-orange underline-offset-4" href="/admin/pages/home">Modifier la page d&apos;accueil</Link></li>
               </ul>
             </Card>
+            </div>
           </div>
         </>
       )}

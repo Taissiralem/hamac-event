@@ -4,27 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { href } from "@/lib/i18n";
-import { setAdsLeadTarget, trackContactClick } from "@/lib/track";
+import { collect, setAdsLeadTarget, trackContactClick } from "@/lib/track";
+// Les ID viennent de l'admin : seuls ceux au format officiel sont injectés dans un script
+import { cleanIds } from "@/lib/tracking";
 
 const STORAGE_KEY = "hamac_consent"; // "granted" | "denied"
 export const OPEN_CONSENT_EVENT = "hamac:open-consent";
-
-// Les ID viennent de l'admin : on n'accepte que leur format officiel avant de les injecter dans un script
-const valid = {
-  ga4: (v) => /^G-[A-Z0-9]{4,}$/.test(v),
-  adsId: (v) => /^AW-\d{5,}$/.test(v),
-  adsLeadLabel: (v) => /^[\w-]{4,}$/.test(v),
-  metaPixel: (v) => /^\d{8,20}$/.test(v),
-};
-
-function cleanIds(raw = {}) {
-  const out = {};
-  for (const key of Object.keys(valid)) {
-    const v = String(raw[key] || "").trim();
-    if (v && valid[key](v)) out[key] = v;
-  }
-  return out;
-}
 
 function readConsent() {
   try {
@@ -93,12 +78,21 @@ export default function Analytics({ ids: rawIds, locale, t }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, consent]);
 
-  // Navigation interne : GA4 suit l'historique tout seul, Meta a besoin d'un PageView
+  // Page vue : statistiques internes à chaque page ; pour Meta seulement lors de la navigation interne
+  // (GA4 suit l'historique tout seul, le premier PageView Meta part à l'initialisation)
   useEffect(() => {
     if (firstPath.current) {
       firstPath.current = false;
+      const q = new URLSearchParams(location.search);
+      const utm = Object.fromEntries(
+        ["source", "medium", "campaign"].map((k) => [k, q.get(`utm_${k}`)]).filter(([, v]) => v)
+      );
+      if (q.has("gclid")) utm.gclid = "1";
+      if (q.has("fbclid")) utm.fbclid = "1";
+      collect("pageview", { first: true, referrer: document.referrer, utm });
       return;
     }
+    collect("pageview");
     window.fbq?.("track", "PageView");
   }, [pathname]);
 

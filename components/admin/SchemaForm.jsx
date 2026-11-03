@@ -95,7 +95,7 @@ export default function SchemaForm({ schema, value, onChange }) {
 
   return (
     <div className="space-y-6">
-      {schema.sections.map((section) => (
+      {schema.sections.filter((x) => !x.hidden).map((section) => (
         <Card key={section.key} title={section.label} help={section.help}>
           <div id={`section-${section.key}`} className="scroll-mt-24 space-y-6">
             {Object.entries(section.fields).map(([key, field]) => (

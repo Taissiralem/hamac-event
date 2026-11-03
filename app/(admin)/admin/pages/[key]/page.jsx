@@ -76,7 +76,7 @@ export default function PageEditor() {
         }
       />
       <nav aria-label="Sections" className="mb-6 flex flex-wrap gap-2">
-        {schema.sections.map((s) => (
+        {schema.sections.filter((x) => !x.hidden).map((s) => (
           <a key={s.key} href={`#section-${s.key}`} className="rounded-full border border-ink/15 bg-white px-3 py-1.5 text-sm hover:border-ink">
             {s.label}
           </a>

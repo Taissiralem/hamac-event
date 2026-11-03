@@ -9,6 +9,7 @@ import { ToastProvider } from "./ui";
 
 const NAV = [
   { href: "/admin", label: "Tableau de bord" },
+  { href: "/admin/statistiques", label: "Statistiques" },
   { href: "/admin/demandes", label: "Demandes reçues" },
   { href: "/admin/pages", label: "Pages du site" },
   { href: "/admin/realisations", label: "Réalisations" },
@@ -16,6 +17,7 @@ const NAV = [
   { href: "/admin/sorties", label: "Programmes" },
   { href: "/admin/newsletter", label: "Newsletter" },
   { href: "/admin/pages/settings", label: "Coordonnées et réseaux" },
+  { href: "/admin/mesure", label: "Outils de mesure" },
 ];
 
 export default function AdminShell({ children }) {

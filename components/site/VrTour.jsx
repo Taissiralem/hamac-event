@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Photo from "@/components/site/Photo";
 import Icon from "@/components/site/Icon";
+import { trackEvent } from "@/lib/track";
 
 // Visite virtuelle (Matterport…) : l'iframe, lourde, n'est chargée qu'au clic
 export default function VrTour({ url, cover, caption, locale }) {
@@ -24,7 +25,10 @@ export default function VrTour({ url, cover, caption, locale }) {
         ) : (
           <button
             type="button"
-            onClick={() => setActive(true)}
+            onClick={() => {
+              setActive(true);
+              trackEvent("vr_tour_start");
+            }}
             className="group absolute inset-0 flex items-center justify-center text-paper"
           >
             <Photo src={cover} alt="" sizes="(min-width: 1024px) 60vw, 100vw" className="transition-transform duration-700 group-hover:scale-[1.03]" />

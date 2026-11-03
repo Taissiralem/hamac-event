@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { href, tr } from "@/lib/i18n";
 import Icon, { SocialIcon } from "./Icon";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function Footer({ locale, t, settings }) {
   const { contact, social, footer } = settings;
@@ -92,9 +93,14 @@ export default function Footer({ locale, t, settings }) {
           <p>
             © {year} Hamac Events. {t.footer.rights}
           </p>
-          <Link href={href(locale, "legal")} className="hover:text-paper">
-            {t.nav.legal}
-          </Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href={href(locale, "legal")} className="hover:text-paper">
+              {t.nav.legal}
+            </Link>
+            {["ga4", "adsId", "metaPixel"].some((k) => settings.tracking?.[k]?.trim()) && (
+              <CookieSettingsButton label={t.footer.cookies} />
+            )}
+          </div>
         </div>
       </div>
     </footer>

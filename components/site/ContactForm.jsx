@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { trackLead } from "@/lib/track";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 const TYPES = ["salon", "team-building", "sortie", "autre"];
@@ -35,6 +36,7 @@ export default function ContactForm({ t, defaultType = "salon", motif = "", comp
         body: JSON.stringify({ ...data, motif: motif || data.type }),
       });
       if (!res.ok) throw new Error(String(res.status));
+      trackLead(data.type);
       setStatus("sent");
       form.reset();
     } catch {

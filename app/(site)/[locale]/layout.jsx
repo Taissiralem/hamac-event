@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import "../../globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import Analytics from "@/components/site/Analytics";
 import { isLocale, locales } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import { getContent } from "@/lib/content/get";
@@ -52,6 +53,7 @@ export default async function SiteLayout({ children, params }) {
           {children}
         </main>
         <Footer locale={locale} t={t} settings={settings} />
+        <Analytics ids={settings.tracking} locale={locale} t={t} />
       </body>
     </html>
   );
